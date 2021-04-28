@@ -11,6 +11,9 @@
 # production
 /build
 
+# misLlaves
+/misLLaves
+
 # misc
 .DS_Store
 .env.local
