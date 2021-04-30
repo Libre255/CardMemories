@@ -27,7 +27,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "prettier": "prettier --no-config --write \"src/**/*.ts?(x)\" --ignore-path .gitignore",
     "server": "npx nodemon ./serverFolder/server.js"
   },
