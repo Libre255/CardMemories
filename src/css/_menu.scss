@@ -1,0 +1,4 @@
+#menu{
+  @include createBox(11vh, $mainBoxWidth);
+  margin: 10px auto;
+}

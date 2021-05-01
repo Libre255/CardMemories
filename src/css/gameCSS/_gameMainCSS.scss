@@ -1,0 +1,5 @@
+#gameMainComponent{
+  margin: 0 auto;
+  @include flexCenter();
+  @include createBox(83%, 80%);
+}

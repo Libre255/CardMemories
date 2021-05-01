@@ -1,0 +1,9 @@
+#rankingComponent{
+  margin: 0 auto;
+  @include createBox(85vh, $mainBoxWidth);
+  #RankingList{
+    margin: 0 auto;
+    @include flexCenter();
+    @include createBox(83%, 80%);
+  }
+}
