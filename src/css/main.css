@@ -1,0 +1,69 @@
+#menu {
+  height: 11vh;
+  width: 95vw;
+  margin: 10px auto;
+}
+
+#homePage {
+  margin: 10px auto;
+  height: 85vh;
+  width: 95vw;
+}
+
+#homePage #gameMainComponent {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 83%;
+  width: 80%;
+}
+
+#rankingComponent {
+  margin: 0 auto;
+  height: 85vh;
+  width: 95vw;
+}
+
+#rankingComponent #RankingList {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 83%;
+  width: 80%;
+}
+
+.testBox {
+  border: 1px solid red;
+}
+
+.testBox2 {
+  border: 1px solid green;
+}
+
+body {
+  color: white;
+  background-color: black;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+/*# sourceMappingURL=main.css.map */

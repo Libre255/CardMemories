@@ -1,10 +1,11 @@
 import React from 'react'
+import RankingList from './RankingList'
 
 const RankingPage :React.FC = () => {
 
   return(
-    <div>
-       Ranking Page!
+    <div id="rankingComponent" className="testBox2">
+      <RankingList/>
     </div>
   )
 }

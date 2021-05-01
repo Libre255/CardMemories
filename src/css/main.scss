@@ -1,0 +1,41 @@
+$mainBoxWidth:95vw;
+
+@mixin createBox($h, $w){
+  height: $h;
+  width: $w;
+}
+@mixin flexCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+@import './menu';
+@import './homePage';
+@import './rankingCSS/rankingMainCSS';
+
+//Test Div position
+.testBox{
+  border:1px solid red;
+}
+.testBox2{
+  border:1px solid green;
+}
+
+//Basic Global Settings 
+body {
+  color:white;
+  background-color: black;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
