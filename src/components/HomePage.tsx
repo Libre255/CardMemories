@@ -1,13 +1,12 @@
-import React from 'react'
-import GameMainComponent from './gameplayComponents/GameMainComponent'
+import React from "react";
+import GameMainComponent from "./gameplayComponents/GameMainComponent";
 
-const HomePage :React.FC = () => {
-
-  return(
+const HomePage: React.FC = () => {
+  return (
     <div id="homePage" className="testBox">
-       <GameMainComponent/>
+      <GameMainComponent />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage 
+export default HomePage;

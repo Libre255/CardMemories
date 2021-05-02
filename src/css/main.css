@@ -10,8 +10,8 @@
   width: 95vw;
 }
 
-#homePage #gameMainComponent {
-  margin: 0 auto;
+#homePage #gameMain-flexBox {
+  margin: 50px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,6 +23,21 @@
           align-items: center;
   height: 83%;
   width: 80%;
+}
+
+#homePage #gameMain-flexBox .cardComponent {
+  height: 70%;
+  width: 20%;
+  margin-left: 15px;
+  border: 5px solid whitesmoke;
+  border-radius: 10px;
+  background-color: #080852;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+#homePage #gameMain-flexBox .frontCard {
+  background-color: #797979;
 }
 
 #rankingComponent {

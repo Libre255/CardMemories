@@ -1,12 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const RankingList :React.FC = () => {
-
-  return(
+const RankingList: React.FC = () => {
+  return (
     <div id="RankingList" className="testBox">
-       Ranking List
+      Ranking List
     </div>
-  )
-}
+  );
+};
 
-export default RankingList 
+export default RankingList;

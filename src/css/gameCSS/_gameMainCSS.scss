@@ -1,5 +1,19 @@
-#gameMainComponent{
-  margin: 0 auto;
+#gameMain-flexBox{
+  margin: 50px auto;
   @include flexCenter();
   @include createBox(83%, 80%);
+
+  .cardComponent{
+    height: 70%;
+    width: 20%; 
+    margin-left: 15px;
+    border:5px solid whitesmoke;
+    border-radius: 10px;
+    background-color:rgb(8, 8, 82);
+    animation-delay: 0.3s;
+  }
+  .frontCard{
+    background-color:rgb(121, 121, 121);
+  }
+  
 }

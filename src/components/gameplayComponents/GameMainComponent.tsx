@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
+import Card from "./Card";
 
-const GameMainComponent :React.FC = () => {
-
-  return(
-    <div id="gameMainComponent" className="testBox2">
-       Game Main Component
+const GameMainComponent: React.FC = () => {
+  return (
+    <div id="gameMain-flexBox" className="testBox2">
+      <Card />
     </div>
-  )
-}
+  );
+};
 
-export default GameMainComponent 
+export default GameMainComponent;
