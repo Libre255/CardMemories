@@ -1,12 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const Menu :React.FC = () => {
-
-  return(
+const Menu: React.FC = () => {
+  return (
     <div id="menu" className="testBox">
-       Menu
+      Menu
     </div>
-  )
-}
+  );
+};
 
-export default Menu 
+export default Menu;

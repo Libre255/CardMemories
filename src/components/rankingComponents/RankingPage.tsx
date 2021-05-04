@@ -1,13 +1,12 @@
-import React from 'react'
-import RankingList from './RankingList'
+import React from "react";
+import RankingList from "./RankingList";
 
-const RankingPage :React.FC = () => {
-
-  return(
+const RankingPage: React.FC = () => {
+  return (
     <div id="rankingComponent" className="testBox2">
-      <RankingList/>
+      <RankingList />
     </div>
-  )
-}
+  );
+};
 
-export default RankingPage 
+export default RankingPage;
