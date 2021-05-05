@@ -1,35 +1,42 @@
-import React, { useState } from "react";
+import React from "react";
+import BackCard from "./BackCard";
+import FrontCard from "./FrontCards";
+import { cardsType } from "./GameMainComponent";
+interface Props {
+  selectedCardsState: [
+    cardsType[],
+    React.Dispatch<React.SetStateAction<cardsType[]>>
+  ];
+  setCards: React.Dispatch<React.SetStateAction<cardsType[]>>;
+  cardValue: cardsType;
+  flippCard: boolean;
+}
 
-const Card: React.FC = () => {
-  const [flipped, setFlipped] = useState<boolean>(false);
+const Card: React.FC<Props> = ({
+  selectedCardsState,
+  setCards,
+  cardValue,
+  flippCard,
+}) => {
+  const [selectedCards, setSelectedCards] = selectedCardsState;
+
   const onCardClick = () => {
-    setFlipped(true);
+    if (selectedCards.length < 2) {
+      setCards((pv) =>
+        pv.map((card) => {
+          if (card.id === cardValue.id) card.flippCard = true;
+          return card;
+        })
+      );
+      setSelectedCards((pv) => [...pv, cardValue]);
+    }
   };
-  if (flipped) {
+
+  if (flippCard) {
     return <FrontCard />;
   } else {
     return <BackCard onCardClick={onCardClick} />;
   }
-};
-
-interface BackCardProps {
-  onCardClick: () => void;
-}
-const BackCard: React.FC<BackCardProps> = ({ onCardClick }) => {
-  return (
-    <div
-      onClick={onCardClick}
-      className={`animate__animated animate__fadeIn cardComponent backCard `}
-    />
-  );
-};
-
-const FrontCard: React.FC = () => {
-  return (
-    <div
-      className={`animate__animated animate__fadeIn cardComponent frontCard`}
-    />
-  );
 };
 
 export default Card;
