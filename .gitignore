@@ -13,7 +13,8 @@
 /app/build
 
 # misLlaves
-/server/misLLaves
+/server/src/misLLaves
+/server/build/misLLaves
 
 # misc
 .DS_Store
