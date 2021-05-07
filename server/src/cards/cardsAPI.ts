@@ -1,5 +1,5 @@
 import express from 'express';
-import {getCards} from '../fireBaseFolder/getCards'
+import {getCards} from './getCards'
 
 const cardsAPI = express.Router();
 

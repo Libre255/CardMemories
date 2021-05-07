@@ -1,4 +1,4 @@
-import {firebaseDB} from './firebaseConfig'
+import {firebaseDB} from '../fireBaseFolder/firebaseConfig'
 import {CardsType} from './cardsType'
 
 
