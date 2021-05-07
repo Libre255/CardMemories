@@ -1,8 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import cardsAPI from './cards/cardsAPI'
-import {addCards} from './fireBaseFolder/addCards';
-import {getCards} from './fireBaseFolder/getCards';
+import rankingAPI from './ranking/rankingAPI';
 
 const app = express();
 const serverPORT = 8080
@@ -10,6 +9,7 @@ const serverPORT = 8080
 app.use(express.json());
 app.use(cors());
 app.use('/cards', cardsAPI);
+app.use('/ranking', rankingAPI);
 
 app.get('/', (req, res) => {
   res.json({msg:"welcom to my card world"})
