@@ -1,24 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "./Card";
 import { useSelectedCards } from "../../hooks/useSelectedCards";
-
-export interface cardsType {
-  id: number;
-  value: number;
-  flippCard: boolean;
-}
-
-const data = [
-  { id: 1, value: 1, flippCard: false },
-  { id: 2, value: 1, flippCard: false },
-  { id: 3, value: 2, flippCard: false },
-  { id: 4, value: 2, flippCard: false },
-  { id: 5, value: 3, flippCard: false },
-  { id: 6, value: 3, flippCard: false },
-];
+import { useCards } from "../../hooks/useCards";
 
 const GameMainComponent: React.FC = () => {
-  const [cards, setCards] = useState<cardsType[]>(data);
+  const { cards, setCards } = useCards();
   const { selectedCards, setSelectedCards } = useSelectedCards({ setCards });
 
   return (
@@ -28,7 +14,6 @@ const GameMainComponent: React.FC = () => {
           key={card.id}
           cardValue={card}
           selectedCardsState={[selectedCards, setSelectedCards]}
-          flippCard={card.flippCard}
           setCards={setCards}
         />
       ))}
