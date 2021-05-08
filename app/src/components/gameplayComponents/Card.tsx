@@ -1,23 +1,18 @@
 import React from "react";
 import BackCard from "./BackCard";
 import FrontCard from "./FrontCards";
-import { cardsType } from "./GameMainComponent";
+import { CardsAPI } from "../../service/cards/cardsAPI";
+
 interface Props {
   selectedCardsState: [
-    cardsType[],
-    React.Dispatch<React.SetStateAction<cardsType[]>>
+    CardsAPI[],
+    React.Dispatch<React.SetStateAction<CardsAPI[]>>
   ];
-  setCards: React.Dispatch<React.SetStateAction<cardsType[]>>;
-  cardValue: cardsType;
-  flippCard: boolean;
+  setCards: React.Dispatch<React.SetStateAction<CardsAPI[]>>;
+  cardValue: CardsAPI;
 }
 
-const Card: React.FC<Props> = ({
-  selectedCardsState,
-  setCards,
-  cardValue,
-  flippCard,
-}) => {
+const Card: React.FC<Props> = ({ selectedCardsState, setCards, cardValue }) => {
   const [selectedCards, setSelectedCards] = selectedCardsState;
 
   const onCardClick = () => {
@@ -32,7 +27,7 @@ const Card: React.FC<Props> = ({
     }
   };
 
-  if (flippCard) {
+  if (cardValue.flippCard) {
     return <FrontCard />;
   } else {
     return <BackCard onCardClick={onCardClick} />;

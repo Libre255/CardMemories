@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { cardsType } from "../components/gameplayComponents/GameMainComponent";
+import { CardsAPI } from "../service/cards/cardsAPI";
 
 interface Props {
-  setCards: React.Dispatch<React.SetStateAction<cardsType[]>>;
+  setCards: React.Dispatch<React.SetStateAction<CardsAPI[]>>;
 }
 
 const useSelectedCards = ({ setCards }: Props) => {
-  const [selectedCards, setSelectedCards] = useState<cardsType[]>([]);
+  const [selectedCards, setSelectedCards] = useState<CardsAPI[]>([]);
 
   useEffect(() => {
     if (selectedCards.length === 2) {
