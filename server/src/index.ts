@@ -4,7 +4,7 @@ import cardsAPI from './cards/cardsAPI'
 import rankingAPI from './ranking/rankingAPI';
 
 const app = express();
-const serverPORT = 8080
+const serverPORT = 8080 || process.env.PORT;
 
 app.use(express.json());
 app.use(cors());
