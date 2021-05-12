@@ -3,7 +3,7 @@ import { CardsAPI } from "./CardsAPI";
 
 const getCards = async (): Promise<CardsAPI[]> => {
   const response = await axios("/cards");
-  const cardsArray = response.data;
+  const cardsArray = await response.data;
   return cardsArray;
 };
 

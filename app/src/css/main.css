@@ -59,13 +59,13 @@
   background-color: #797979;
 }
 
-#rankingComponent {
+#RankingPage {
   margin: 0 auto;
   height: 85vh;
   width: 95vw;
 }
 
-#rankingComponent #RankingList {
+#RankingPage #RankingList {
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;

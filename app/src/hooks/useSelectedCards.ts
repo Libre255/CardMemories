@@ -16,9 +16,7 @@ const useSelectedCards = ({ setCards }: Props) => {
         setTimeout(() => {
           setCards((pv) =>
             pv.map((card) => {
-              if(
-                card.id === selectedCards[0].id || selectedCards[1].id
-              ) {
+              if (card.id === selectedCards[0].id || selectedCards[1].id) {
                 card.flippCard = false;
               }
               return card;

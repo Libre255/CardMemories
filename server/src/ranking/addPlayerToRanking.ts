@@ -1,7 +1,7 @@
 import { firebaseDB } from "../fireBaseFolder/firebaseConfig"
-import { rankingType } from "./rankingType"
+import { RankingType } from "./rankingType"
 
-const addPlayerToRanking = (player:rankingType)=>{
+const addPlayerToRanking = (player:RankingType)=>{
   firebaseDB.collection('ranking').doc().set(player)
 }
 
