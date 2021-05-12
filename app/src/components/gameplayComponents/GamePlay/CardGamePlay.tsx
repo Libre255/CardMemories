@@ -1,13 +1,13 @@
-import React from 'react'
-import { useCards } from '../../../hooks/useCards'
-import { useSelectedCards } from '../../../hooks/useSelectedCards'
-import Card from './Card'
+import React from "react";
+import { useCards } from "../../../hooks/useCards";
+import { useSelectedCards } from "../../../hooks/useSelectedCards";
+import Card from "./Card";
 
-const CardGamePlay :React.FC = () => {
+const CardGamePlay: React.FC = () => {
   const { cards, setCards } = useCards();
   const { selectedCards, setSelectedCards } = useSelectedCards({ setCards });
 
-  return(
+  return (
     <div id="gameMain-flexBox" className="testBox2">
       {cards.map((cardInfo) => (
         <Card
@@ -17,7 +17,7 @@ const CardGamePlay :React.FC = () => {
         />
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default CardGamePlay 
+export default CardGamePlay;

@@ -3,7 +3,7 @@ import RankingList from "./RankingList";
 
 const RankingPage: React.FC = () => {
   return (
-    <div id="rankingComponent" className="testBox2">
+    <div id="RankingPage" className="testBox2">
       <RankingList />
     </div>
   );

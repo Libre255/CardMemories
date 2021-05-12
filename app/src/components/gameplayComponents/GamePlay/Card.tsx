@@ -4,7 +4,7 @@ import FrontCard from "./FrontCards";
 import { CardsAPI } from "../../../service/cards/CardsAPI";
 
 interface Props {
-  cardState:[CardsAPI, React.Dispatch<React.SetStateAction<CardsAPI[]>>]
+  cardState: [CardsAPI, React.Dispatch<React.SetStateAction<CardsAPI[]>>];
   selectedCardsState: [
     CardsAPI[],
     React.Dispatch<React.SetStateAction<CardsAPI[]>>
@@ -12,7 +12,7 @@ interface Props {
 }
 
 const Card: React.FC<Props> = ({ selectedCardsState, cardState }) => {
-  const [cardValue, setCards] = cardState
+  const [cardValue, setCards] = cardState;
   const [selectedCards, setSelectedCards] = selectedCardsState;
 
   const onCardClick = () => {
