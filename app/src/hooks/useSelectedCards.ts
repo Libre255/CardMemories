@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { CardsAPI } from "../service/cards/cardsAPI";
+import { CardsAPI } from "../service/cards/CardsAPI";
 
 interface Props {
   setCards: React.Dispatch<React.SetStateAction<CardsAPI[]>>;

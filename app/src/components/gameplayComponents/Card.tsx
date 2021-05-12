@@ -1,7 +1,7 @@
 import React from "react";
 import BackCard from "./BackCard";
 import FrontCard from "./FrontCards";
-import { CardsAPI } from "../../service/cards/cardsAPI";
+import { CardsAPI } from "../../service/cards/CardsAPI";
 
 interface Props {
   selectedCardsState: [

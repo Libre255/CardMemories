@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CardsAPI } from "./cardsAPI";
+import { CardsAPI } from "./CardsAPI";
 
 const getCards = async (): Promise<CardsAPI[]> => {
   const response = await axios("/cards");
