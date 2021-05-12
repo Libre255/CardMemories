@@ -1,24 +1,15 @@
-import React from "react";
-import Card from "./Card";
-import { useSelectedCards } from "../../hooks/useSelectedCards";
-import { useCards } from "../../hooks/useCards";
+import React, {useState} from "react";
+import CardGamePlay from "./GamePlay/CardGamePlay";
+import StartButton from "./StartButton";
 
 const GameMainComponent: React.FC = () => {
-  const { cards, setCards } = useCards();
-  const { selectedCards, setSelectedCards } = useSelectedCards({ setCards });
+  const [startGame, setStartGame] = useState<boolean>(false)
 
-  return (
-    <div id="gameMain-flexBox" className="testBox2">
-      {cards.map((card) => (
-        <Card
-          key={card.id}
-          cardValue={card}
-          selectedCardsState={[selectedCards, setSelectedCards]}
-          setCards={setCards}
-        />
-      ))}
-    </div>
-  );
+  if(startGame){
+    return <CardGamePlay/> 
+  }else{
+    return <StartButton setStartGame={setStartGame}/>
+  }
 };
 
 export default GameMainComponent;

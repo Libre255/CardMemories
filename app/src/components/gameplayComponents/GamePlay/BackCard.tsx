@@ -6,7 +6,7 @@ const BackCard: React.FC<BackCardProps> = ({ onCardClick }) => {
   return (
     <div
       onClick={() => onCardClick()}
-      className={`animate__animated animate__fadeIn cardComponent backCard `}
+      className={`cardComponent backCard animate__animated animate__fadeIn`}
     />
   );
 };

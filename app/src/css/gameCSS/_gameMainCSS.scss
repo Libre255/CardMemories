@@ -1,19 +1,26 @@
+#startButton{
+  margin: 0 auto;
+  @include flexCenter();
+  @include createBox(50%, 15%);;
+  background-color: rgb(53, 4, 4);
+};
+
 #gameMain-flexBox{
   margin: 50px auto;
   @include flexCenter();
   @include createBox(83%, 80%);
-
   .cardComponent{
     height: 70%;
     width: 20%; 
     margin-left: 15px;
     border:5px solid whitesmoke;
     border-radius: 10px;
-    background-color:rgb(8, 8, 82);
     animation-delay: 0.3s;
+  };
+  .backCard{
+    background-color:rgb(8, 8, 82);
   }
   .frontCard{
     background-color:rgb(121, 121, 121);
-  }
-  
-}
+  };
+};

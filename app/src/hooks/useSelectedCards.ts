@@ -15,14 +15,13 @@ const useSelectedCards = ({ setCards }: Props) => {
       if (selectedCards[0].value !== selectedCards[1].value) {
         setTimeout(() => {
           setCards((pv) =>
-            pv.map((cards) => {
-              if (
-                cards.id === selectedCards[0].id ||
-                cards.id === selectedCards[1].id
+            pv.map((card) => {
+              if(
+                card.id === selectedCards[0].id || selectedCards[1].id
               ) {
-                cards.flippCard = false;
+                card.flippCard = false;
               }
-              return cards;
+              return card;
             })
           );
         }, 1000);

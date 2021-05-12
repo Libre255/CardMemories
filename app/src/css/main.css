@@ -10,6 +10,22 @@
   width: 95vw;
 }
 
+#homePage #startButton {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50%;
+  width: 15%;
+  background-color: #350404;
+}
+
 #homePage #gameMain-flexBox {
   margin: 50px auto;
   display: -webkit-box;
@@ -31,9 +47,12 @@
   margin-left: 15px;
   border: 5px solid whitesmoke;
   border-radius: 10px;
-  background-color: #080852;
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
+}
+
+#homePage #gameMain-flexBox .backCard {
+  background-color: #080852;
 }
 
 #homePage #gameMain-flexBox .frontCard {
