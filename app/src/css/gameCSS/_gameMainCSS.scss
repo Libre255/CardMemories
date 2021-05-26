@@ -21,6 +21,8 @@
     background-color:rgb(8, 8, 82);
   }
   .frontCard{
+    @include flexCenter();
+    font-size: 7rem;
     background-color:rgb(121, 121, 121);
   };
 };
