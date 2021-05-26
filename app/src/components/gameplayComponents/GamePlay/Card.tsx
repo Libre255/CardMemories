@@ -29,7 +29,7 @@ const Card: React.FC<Props> = ({ selectedCardsState, cardState }) => {
   };
 
   if (cardValue.flippCard) {
-    return <FrontCard />;
+    return <FrontCard cardValue={cardValue.value}/>;
   } else {
     return <BackCard onCardClick={onCardClick} />;
   }
