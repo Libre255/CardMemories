@@ -4,16 +4,17 @@ import { useSelectedCards } from "../../../hooks/useSelectedCards";
 import Card from "./Card";
 
 const CardGamePlay: React.FC = () => {
-  const { cards, setCards } = useCards();
-  const { selectedCards, setSelectedCards } = useSelectedCards({ setCards });
+  const { cardDeck, dispatch } = useCards();
+  const { selectedCards, setSelectedCards } = useSelectedCards({ dispatch });
 
   return (
     <div id="gameMain-flexBox" className="testBox2">
-      {cards.map((cardInfo) => (
+      {cardDeck.map((cardInfo) => (
         <Card
           key={cardInfo.id}
           selectedCardsState={[selectedCards, setSelectedCards]}
-          cardState={[cardInfo, setCards]}
+          cardInfo={cardInfo}
+          dispatch={dispatch}
         />
       ))}
     </div>

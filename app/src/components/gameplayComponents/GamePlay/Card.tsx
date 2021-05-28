@@ -2,34 +2,30 @@ import React from "react";
 import BackCard from "./BackCard";
 import FrontCard from "./FrontCards";
 import { CardsAPI } from "../../../service/cards/CardsAPI";
+import { Action } from "../../../methods/cardsReducerType";
+import { COMMANDS } from "../../../methods/cardsReducer";
 
 interface Props {
-  cardState: [CardsAPI, React.Dispatch<React.SetStateAction<CardsAPI[]>>];
+  cardInfo: CardsAPI;
   selectedCardsState: [
     CardsAPI[],
     React.Dispatch<React.SetStateAction<CardsAPI[]>>
   ];
+  dispatch: React.Dispatch<Action>;
 }
 
-const Card: React.FC<Props> = ({ selectedCardsState, cardState }) => {
-  const [cardValue, setCards] = cardState;
+const Card: React.FC<Props> = ({ selectedCardsState, cardInfo, dispatch }) => {
   const [selectedCards, setSelectedCards] = selectedCardsState;
-
-  const flipClickedCardFaceUP = (cardDeck: CardsAPI[]) =>
-    cardDeck.map((card) => {
-      if (card.id === cardValue.id) card.flippCard = true;
-      return card;
-    });
 
   const onCardClick = () => {
     if (selectedCards.length < 2) {
-      setCards((cardDeck) => flipClickedCardFaceUP(cardDeck));
-      setSelectedCards((pv) => [...pv, cardValue]);
+      dispatch({ type: COMMANDS.Flipp_Card_UP, cardSelected: cardInfo });
+      setSelectedCards((pv) => [...pv, cardInfo]);
     }
   };
 
-  if (cardValue.flippCard) {
-    return <FrontCard cardValue={cardValue.value}/>;
+  if (cardInfo.flippCard) {
+    return <FrontCard cardValue={cardInfo.value} />;
   } else {
     return <BackCard onCardClick={onCardClick} />;
   }

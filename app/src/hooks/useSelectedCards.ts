@@ -1,34 +1,33 @@
 import { useState, useEffect } from "react";
+import { COMMANDS } from "../methods/cardsReducer";
+import { Action } from "../methods/cardsReducerType";
 import { CardsAPI } from "../service/cards/CardsAPI";
 
 interface Props {
-  setCards: React.Dispatch<React.SetStateAction<CardsAPI[]>>;
+  dispatch: React.Dispatch<Action>;
 }
 
-const useSelectedCards = ({ setCards }: Props) => {
+const useSelectedCards = ({ dispatch }: Props) => {
   const [selectedCards, setSelectedCards] = useState<CardsAPI[]>([]);
 
   useEffect(() => {
-    const resetSelectedCards = () => setSelectedCards([]);
-    const flipCardsFaceDown = () => {
-      setCards((cardDeck) =>
-        cardDeck.map((card) => {
-          if (
-            selectedCards.some((selectedCard) => selectedCard.id === card.id)
-          ) {
-            card.flippCard = false;
-          }
-          return card;
-        })
-      );
+    const resetSelectedCards = () => {
+      const waitForAnimationToFlipDown = () => setSelectedCards([]);
+      setTimeout(waitForAnimationToFlipDown, 1050);
     };
+    const flipCardsFaceDown = () =>
+      dispatch({
+        type: COMMANDS.Flip_Selected_Cards_Down,
+        selectedCards: selectedCards,
+      });
+
     if (selectedCards.length === 2) {
-      setTimeout(resetSelectedCards, 1050);
+      resetSelectedCards();
       if (selectedCards[0].value !== selectedCards[1].value) {
         setTimeout(flipCardsFaceDown, 1000);
       }
     }
-  }, [selectedCards, setCards]);
+  }, [selectedCards, dispatch]);
 
   return { selectedCards, setSelectedCards };
 };
