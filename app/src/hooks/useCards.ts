@@ -1,36 +1,53 @@
-import { useEffect, useState } from "react";
-import { CardsAPI } from "../service/cards/CardsAPI";
+import { useEffect, useReducer, useState } from "react";
+import { COMMANDS, initialState, reducer } from "../methods/cardsReducer";
 import { getCards } from "../service/cards/CardsService";
 
 const useCards = () => {
-  const [cards, setCards] = useState<CardsAPI[]>([]);
+  const [{ cardDeck }, dispatch] = useReducer(reducer, initialState);
   const [error, setError] = useState<Error>();
 
-  const shuffleCardDeck = (cardDeck:CardsAPI[]):CardsAPI[]=>{
-    for (let i = (cardDeck.length - 1); i > 0; i--) {
-      const j = Math.floor(Math.random() * i)
-      const temp = cardDeck[i]
-      cardDeck[i] = cardDeck[j]
-      cardDeck[j] = temp
-    }
-    return cardDeck
-  }
   useEffect(() => {
     const fetchCards = async () => {
       try {
         const cardsArray = await getCards();
-        if (cardsArray === undefined) {
+        if (!cardsArray) {
           throw new Error("cardsArray is undefined");
         }
-        setCards(shuffleCardDeck(cardsArray));
+        dispatch({ type: COMMANDS.Add_to_DB_Deck, cardsFromDB: cardsArray });
+        dispatch({ type: COMMANDS.Add_Cards_To_Deck });
+        console.log("fetched Cars :D!");
       } catch (error) {
         setError(error);
       }
     };
     fetchCards();
-  }, []);
+  }, [dispatch]);
 
-  return { cards, setCards, error };
+  useEffect(() => {
+    const foundAllMatchedCards = cardDeck.every(
+      (card) => card.flippCard === true
+    );
+    const addMoreCardsToDeck = () => {
+      const waitForAnimationToFlipDown = () => {
+        dispatch({ type: COMMANDS.Update_Amount_of_ParCards });
+        dispatch({ type: COMMANDS.Add_Cards_To_Deck });
+      };
+      setTimeout(waitForAnimationToFlipDown, 1050);
+    };
+    const cardDeckHasBeenFilled = cardDeck.length > 1;
+    const maxCardsNotBeenReached = cardDeck.length < 6;
+
+    if (
+      !!cardDeckHasBeenFilled &&
+      !!maxCardsNotBeenReached &&
+      foundAllMatchedCards
+    ) {
+      addMoreCardsToDeck();
+      console.log("all cards Flipped! :D");
+    }
+  }, [cardDeck, dispatch]);
+
+  return { cardDeck, dispatch, error };
 };
 
 export { useCards };
