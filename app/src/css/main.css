@@ -55,8 +55,21 @@
   background-color: #350404;
 }
 
+#homePage #SmashBar {
+  margin: 0 auto;
+  height: 30px;
+  width: 80%;
+  border: 1px solid yellow;
+}
+
+#homePage #SmashBar #SmashBarPoints {
+  height: 30px;
+  width: 0%;
+  background-color: brown;
+}
+
 #homePage #gameMain-flexBox {
-  margin: 50px auto;
+  margin: 20px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

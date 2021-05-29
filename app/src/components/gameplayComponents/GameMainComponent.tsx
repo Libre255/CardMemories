@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import CardGamePlay from "./GamePlay/CardGamePlay";
+import GamePlayBox from "./GamePlayBox";
 import StartButton from "./StartButton";
 
 const GameMainComponent: React.FC = () => {
   const [startGame, setStartGame] = useState<boolean>(false);
 
   if (startGame) {
-    return <CardGamePlay />;
+    return <GamePlayBox/>;
   } else {
     return <StartButton setStartGame={setStartGame} />;
   }
