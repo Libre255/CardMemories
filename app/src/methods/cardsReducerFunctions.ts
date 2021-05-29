@@ -37,9 +37,9 @@ const addCardsToDeck = (state: InitialStateType) => {
   for (let i = 0; i < state.amountOfParCards; i++) {
     deck = [...deck, { ...state.CompleteDBDeck[i] }];
   }
-  const tea = { ...state, cardDeck: deck };
-  console.log("tea", tea);
-  return tea;
+  const addedNewCards = { ...state, cardDeck: deck };
+  console.log("Added New Cards:", addedNewCards);
+  return addedNewCards;
 };
 
 const flipAllCardsUp = (state: InitialStateType) => {
