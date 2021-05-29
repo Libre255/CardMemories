@@ -55,17 +55,48 @@
   background-color: #350404;
 }
 
-#homePage #SmashBar {
+#homePage #SmashBarBox {
+  height: 7%;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid red;
   margin: 0 auto;
+}
+
+#homePage #SmashBarBox #SmashBar {
   height: 30px;
   width: 80%;
   border: 1px solid yellow;
 }
 
-#homePage #SmashBar #SmashBarPoints {
+#homePage #SmashBarBox #SmashBar #SmashBarPoints {
   height: 30px;
   width: 0%;
   background-color: brown;
+}
+
+#homePage #SmashBarBox #SmashButton {
+  height: 40px;
+  width: 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: burlywood;
+  color: black;
+  border-radius: 15px;
 }
 
 #homePage #gameMain-flexBox {

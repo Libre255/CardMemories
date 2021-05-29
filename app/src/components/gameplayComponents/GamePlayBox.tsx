@@ -1,17 +1,26 @@
-import React, { useState } from 'react'
-import CardDeck from './cardComponents/CardDeck'
-import SmashBar from './SmashBar'
+import React, { useState } from "react";
+import CardDeck from "./cardComponents/CardDeck";
+import SmashBarContainer from "./SmashBarContainer";
 
-
-const GamePlayBox :React.FC = () => {
-  const [SmashBarPower, setSmashBarPower] = useState<number>(0)
-  
-  return(
-    <>
-      <CardDeck setSmashBarPower={setSmashBarPower}/>
-      <SmashBar SmashBarPower={SmashBarPower} />
-    </>
-  )
+export interface SmashBarType {
+  powerProcent: number;
+  ActivatePower: boolean;
+  ShowPowerButton: boolean;
 }
 
-export default GamePlayBox 
+const GamePlayBox: React.FC = () => {
+  const [SmashBarPower, setSmashBarPower] = useState<SmashBarType>({
+    powerProcent: 0,
+    ActivatePower: false,
+    ShowPowerButton: false,
+  });
+
+  return (
+    <>
+      <CardDeck smashBarState={[SmashBarPower, setSmashBarPower]} />
+      <SmashBarContainer smashBarState={[SmashBarPower, setSmashBarPower]} />
+    </>
+  );
+};
+
+export default GamePlayBox;

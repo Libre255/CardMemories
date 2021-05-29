@@ -1,4 +1,11 @@
-import { CardsAPI } from "../service/cards/CardsAPI";
+import {
+  addCardsToDeck,
+  addToCompleteDBDeck,
+  flipAllCardsUp,
+  flipCardUP,
+  flipSelectedCardsDown,
+  updateAmountOfCards,
+} from "./cardsReducerFunctions";
 import { Action, Commands, InitialStateType } from "./cardsReducerType";
 
 const COMMANDS: Commands = {
@@ -9,6 +16,7 @@ const COMMANDS: Commands = {
   Flipp_Card_UP: "flipp clicked card up",
   Reset_DeckOfCards: "reset cardDeck",
   Flip_Selected_Cards_Down: "flip selected cards down because they didnt match",
+  Flip_AllCards_Up: "flipp all cards up when smashBar is filled",
 };
 const initialState: InitialStateType = {
   cardDeck: [],
@@ -17,7 +25,27 @@ const initialState: InitialStateType = {
 };
 
 const reducer = (state: InitialStateType, action: Action) => {
-  const updateAmountOfCards = () => ({
+  switch (action.type) {
+    case COMMANDS.Add_Cards_To_Deck:
+      return addCardsToDeck(state);
+    case COMMANDS.Add_to_DB_Deck:
+      return addToCompleteDBDeck(state, action);
+    case COMMANDS.Update_Amount_of_ParCards:
+      return updateAmountOfCards(state);
+    case COMMANDS.Flipp_Card_UP:
+      return flipCardUP(state, action);
+    case COMMANDS.Flip_Selected_Cards_Down:
+      return flipSelectedCardsDown(state, action);
+    case COMMANDS.Flip_AllCards_Up:
+      return flipAllCardsUp(state);
+    default:
+      return state;
+  }
+};
+
+export { COMMANDS, initialState, reducer };
+/*
+ const updateAmountOfCards = () => ({
     ...state,
     amountOfParCards: state.amountOfParCards + 2,
   });
@@ -55,20 +83,4 @@ const reducer = (state: InitialStateType, action: Action) => {
     console.log("tea", tea);
     return tea;
   };
-  switch (action.type) {
-    case COMMANDS.Add_Cards_To_Deck:
-      return addCardsToDeck();
-    case COMMANDS.Add_to_DB_Deck:
-      return addToCompleteDBDeck();
-    case COMMANDS.Update_Amount_of_ParCards:
-      return updateAmountOfCards();
-    case COMMANDS.Flipp_Card_UP:
-      return flipCardUP();
-    case COMMANDS.Flip_Selected_Cards_Down:
-      return flipSelectedCardsDown();
-    default:
-      return state;
-  }
-};
-
-export { COMMANDS, initialState, reducer };
+*/

@@ -5,13 +5,27 @@
   background-color: rgb(53, 4, 4);
 };
 
-#SmashBar{
+#SmashBarBox{
+  @include createBox(7%, 80%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border:1px solid red;
   margin: 0 auto;
-  @include createBox(30px, 80%);
-  border:1px solid yellow;
-  #SmashBarPoints{
-    @include createBox(30px, 0%);
-    background-color: brown;
+  #SmashBar{
+    @include createBox(30px, 80%);
+    border:1px solid yellow;
+    #SmashBarPoints{
+      @include createBox(30px, 0%);
+      background-color: brown;
+    }
+  }
+  #SmashButton{
+    @include createBox(40px, 8%);
+    @include flexCenter();
+    background-color: burlywood;
+    color:black;
+    border-radius: 15px;
   }
 }
 

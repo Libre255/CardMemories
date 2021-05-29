@@ -6,7 +6,7 @@ const GameMainComponent: React.FC = () => {
   const [startGame, setStartGame] = useState<boolean>(false);
 
   if (startGame) {
-    return <GamePlayBox/>;
+    return <GamePlayBox />;
   } else {
     return <StartButton setStartGame={setStartGame} />;
   }
