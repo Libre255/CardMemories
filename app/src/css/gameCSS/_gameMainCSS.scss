@@ -5,8 +5,32 @@
   background-color: rgb(53, 4, 4);
 };
 
+#SmashBarBox{
+  @include createBox(7%, 80%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border:1px solid red;
+  margin: 0 auto;
+  #SmashBar{
+    @include createBox(30px, 80%);
+    border:1px solid yellow;
+    #SmashBarPoints{
+      @include createBox(30px, 0%);
+      background-color: brown;
+    }
+  }
+  #SmashButton{
+    @include createBox(40px, 8%);
+    @include flexCenter();
+    background-color: burlywood;
+    color:black;
+    border-radius: 15px;
+  }
+}
+
 #gameMain-flexBox{
-  margin: 50px auto;
+  margin: 20px auto;
   @include flexCenter();
   @include createBox(83%, 80%);
   .cardComponent{
