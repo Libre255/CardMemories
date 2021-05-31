@@ -4,7 +4,6 @@ import { getCards } from "../service/cards/CardsService";
 
 const useCards = () => {
   const [{ cardDeck }, dispatch] = useReducer(reducer, initialState);
-  const [maxMatchedCardsReached, setMaxMatchedCardsReached] = useState(false)
   const [error, setError] = useState<Error>();
 
   useEffect(() => {
@@ -36,18 +35,18 @@ const useCards = () => {
       setTimeout(waitForAnimationToFlipDown, 1050);
     };
     const cardDeckHasBeenFilled = cardDeck.length > 1;
-    const maxCardsHasNotBeenReached = cardDeck.length < 6
-    if(!!cardDeckHasBeenFilled && !!maxCardsHasNotBeenReached && foundAllMatchedCards){
+    const maxCardsHasNotBeenReached = cardDeck.length < 6;
+    if (
+      !!cardDeckHasBeenFilled &&
+      !!maxCardsHasNotBeenReached &&
+      foundAllMatchedCards
+    ) {
       addMoreCardsToDeck();
       console.log("all cards Flipped! :D");
     }
-    if(cardDeck.length === 6 && foundAllMatchedCards){
-      setMaxMatchedCardsReached(true)
-    }
+  }, [cardDeck, dispatch]);
 
-  }, [cardDeck, dispatch, maxMatchedCardsReached]);
-
-  return { cardDeck, dispatch, error, maxMatchedCardsReached };
+  return { cardDeck, dispatch, error };
 };
 
 export { useCards };

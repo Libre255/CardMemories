@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import { COMMANDS } from "../methods/cardsReducer";
 import { Action } from "../methods/cardsReducerType";
 import { CardsAPI } from "../service/cards/CardsAPI";
 
 interface Props {
-  selectedCards:CardsAPI[];
-  dispatch:React.Dispatch<Action>;
+  selectedCards: CardsAPI[];
+  dispatch: React.Dispatch<Action>;
 }
 export interface SmashBarType {
   powerProcent: number;
@@ -13,7 +13,7 @@ export interface SmashBarType {
   ShowPowerButton: boolean;
 }
 
-const useSmashBarPower = ({selectedCards, dispatch}:Props)=>{
+const useSmashBarPower = ({ selectedCards, dispatch }: Props) => {
   const [SmashBarPower, setSmashBarPower] = useState<SmashBarType>({
     powerProcent: 0,
     ActivatePower: false,
@@ -36,13 +36,12 @@ const useSmashBarPower = ({selectedCards, dispatch}:Props)=>{
       }
     };
 
-    if(selectedCards.length === 2){
+    if (selectedCards.length === 2) {
       if (selectedCards[0].value === selectedCards[1].value) {
         setSmashBarPower((smashBar) => updateSmashBarProcent(smashBar));
       }
     }
-    
-  }, [selectedCards])
+  }, [selectedCards]);
 
   useEffect(() => {
     const resetAllSmashBarProperties = () => ({
@@ -57,8 +56,7 @@ const useSmashBarPower = ({selectedCards, dispatch}:Props)=>{
     }
   }, [SmashBarPower, dispatch, setSmashBarPower]);
 
+  return { SmashBarPower, setSmashBarPower };
+};
 
-  return {SmashBarPower, setSmashBarPower}
-}
-
-export {useSmashBarPower}
+export { useSmashBarPower };

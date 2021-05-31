@@ -4,13 +4,16 @@ import { CardsAPI } from "../../../service/cards/CardsAPI";
 import Card from "./Card";
 
 interface Props {
-  cardsHook:[CardsAPI[], React.Dispatch<Action>]
-  selectCardHook:[CardsAPI[], React.Dispatch<React.SetStateAction<CardsAPI[]>>];
+  cardsHook: [CardsAPI[], React.Dispatch<Action>];
+  selectCardHook: [
+    CardsAPI[],
+    React.Dispatch<React.SetStateAction<CardsAPI[]>>
+  ];
 }
 
-const CardDeck: React.FC<Props> = ({cardsHook, selectCardHook}) => {
-  const [cardDeck, dispatch] = cardsHook
-  const [selectedCards, setSelectedCards] = selectCardHook
+const CardDeck: React.FC<Props> = ({ cardsHook, selectCardHook }) => {
+  const [cardDeck, dispatch] = cardsHook;
+  const [selectedCards, setSelectedCards] = selectCardHook;
 
   return (
     <div id="gameMain-flexBox" className="testBox2">

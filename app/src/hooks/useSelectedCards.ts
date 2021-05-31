@@ -9,7 +9,7 @@ interface Props {
 
 const useSelectedCards = ({ dispatch }: Props) => {
   const [selectedCards, setSelectedCards] = useState<CardsAPI[]>([]);
- 
+
   useEffect(() => {
     const resetSelectedCards = () => {
       const waitForAnimationToFlipDown = () => setSelectedCards([]);
@@ -26,7 +26,7 @@ const useSelectedCards = ({ dispatch }: Props) => {
       resetSelectedCards();
       if (selectedCards[0].value !== selectedCards[1].value) {
         setTimeout(flipCardsFaceDown, 1000);
-      } 
+      }
     }
   }, [selectedCards, dispatch]);
 
