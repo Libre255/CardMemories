@@ -35,11 +35,10 @@ const useCards = () => {
       setTimeout(waitForAnimationToFlipDown, 1050);
     };
     const cardDeckHasBeenFilled = cardDeck.length > 1;
-    const maxCardsNotBeenReached = cardDeck.length < 6;
-
+    const maxCardsHasNotBeenReached = cardDeck.length < 6;
     if (
       !!cardDeckHasBeenFilled &&
-      !!maxCardsNotBeenReached &&
+      !!maxCardsHasNotBeenReached &&
       foundAllMatchedCards
     ) {
       addMoreCardsToDeck();

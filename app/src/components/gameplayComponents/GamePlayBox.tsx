@@ -1,24 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
+import { useCards } from "../../hooks/useCards";
+import { useSelectedCards } from "../../hooks/useSelectedCards";
+import { useSmashBarPower } from "../../hooks/useSmashBarPower";
+import { useTimer } from "../../hooks/useTimer";
+import { useUserInfo } from "../../hooks/useUserInfo";
 import CardDeck from "./cardComponents/CardDeck";
+import EndGameInput from "./EndGameInput";
 import SmashBarContainer from "./SmashBarContainer";
 
-export interface SmashBarType {
-  powerProcent: number;
-  ActivatePower: boolean;
-  ShowPowerButton: boolean;
-}
-
+//Bug found when smashBoxButton clicked when on the process of rendering new card
 const GamePlayBox: React.FC = () => {
-  const [SmashBarPower, setSmashBarPower] = useState<SmashBarType>({
-    powerProcent: 0,
-    ActivatePower: false,
-    ShowPowerButton: false,
+  const { cardDeck, dispatch } = useCards();
+  const { selectedCards, setSelectedCards } = useSelectedCards({ dispatch });
+  const { SmashBarPower, setSmashBarPower } = useSmashBarPower({
+    selectedCards,
+    dispatch,
   });
+  const { timer, maxMatchedCardsReached } = useTimer();
+  const { userInfo } = useUserInfo({ maxMatchedCardsReached });
 
   return (
     <>
-      <CardDeck smashBarState={[SmashBarPower, setSmashBarPower]} />
+      <div>{timer}</div>
+      <CardDeck
+        cardsHook={[cardDeck, dispatch]}
+        selectCardHook={[selectedCards, setSelectedCards]}
+      />
       <SmashBarContainer smashBarState={[SmashBarPower, setSmashBarPower]} />
+      {userInfo.InsertUserName ? <EndGameInput /> : ""}
     </>
   );
 };
