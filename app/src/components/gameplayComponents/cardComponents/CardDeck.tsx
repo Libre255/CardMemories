@@ -1,22 +1,16 @@
 import React from "react";
-import { useCards } from "../../../hooks/useCards";
-import { useSelectedCards } from "../../../hooks/useSelectedCards";
-import { SmashBarType } from "../GamePlayBox";
+import { Action } from "../../../methods/cardsReducerType";
+import { CardsAPI } from "../../../service/cards/CardsAPI";
 import Card from "./Card";
 
 interface Props {
-  smashBarState: [
-    SmashBarType,
-    React.Dispatch<React.SetStateAction<SmashBarType>>
-  ];
+  cardsHook:[CardsAPI[], React.Dispatch<Action>]
+  selectCardHook:[CardsAPI[], React.Dispatch<React.SetStateAction<CardsAPI[]>>];
 }
 
-const CardDeck: React.FC<Props> = ({ smashBarState }) => {
-  const { cardDeck, dispatch } = useCards();
-  const { selectedCards, setSelectedCards } = useSelectedCards({
-    dispatch,
-    smashBarState,
-  });
+const CardDeck: React.FC<Props> = ({cardsHook, selectCardHook}) => {
+  const [cardDeck, dispatch] = cardsHook
+  const [selectedCards, setSelectedCards] = selectCardHook
 
   return (
     <div id="gameMain-flexBox" className="testBox2">

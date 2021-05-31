@@ -1,0 +1,11 @@
+#EndGameInput{
+  @include createBox(100%, 100%);
+  @include flexCenter();
+  top: 0px;
+  position: absolute;
+  z-index:1;
+  background-color: rgba(43, 43, 43, 0.637);
+  label{
+    margin-right:10px;
+  }
+}

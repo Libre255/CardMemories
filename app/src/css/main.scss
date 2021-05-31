@@ -13,6 +13,7 @@ $mainBoxWidth:95vw;
 @import './menu';
 @import './homePage';
 @import './rankingCSS/rankingMainCSS';
+@import './gameCSS/endGameInput';
 
 //Test Div position
 .testBox{
@@ -21,6 +22,8 @@ $mainBoxWidth:95vw;
 .testBox2{
   border:1px solid green;
 }
+
+
 
 //Basic Global Settings 
 body {
