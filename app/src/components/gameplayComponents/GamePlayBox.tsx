@@ -10,6 +10,7 @@ import SmashBarContainer from "./SmashBarContainer";
 import Timer from "./Timer";
 
 //Bug found when smashBoxButton clicked when on the process of rendering new card
+//After smashButton clicked return all cards face down.
 const GamePlayBox: React.FC = () => {
   const { cardDeck, dispatch } = useCards();
   const { selectedCards, setSelectedCards } = useSelectedCards({ dispatch });
@@ -17,8 +18,11 @@ const GamePlayBox: React.FC = () => {
     selectedCards,
     dispatch,
   });
-  const { timer, maxMatchedCardsReached } = useTimer();
-  const { userInfo } = useUserInfo({ maxMatchedCardsReached });
+  const { timer, timerReached0 } = useTimer();
+  const { userInfo, setUserInfo } = useUserInfo({
+    timerReached0,
+    selectedCards,
+  });
 
   return (
     <>
@@ -28,7 +32,11 @@ const GamePlayBox: React.FC = () => {
         selectCardHook={[selectedCards, setSelectedCards]}
       />
       <SmashBarContainer smashBarState={[SmashBarPower, setSmashBarPower]} />
-      {userInfo.InsertUserName ? <EndGameInput /> : ""}
+      {userInfo.InsertUserName ? (
+        <EndGameInput setUserInfo={setUserInfo} />
+      ) : (
+        ""
+      )}
     </>
   );
 };
