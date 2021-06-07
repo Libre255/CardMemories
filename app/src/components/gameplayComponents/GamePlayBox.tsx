@@ -7,6 +7,7 @@ import { useUserInfo } from "../../hooks/useUserInfo";
 import CardDeck from "./cardComponents/CardDeck";
 import EndGameInput from "./EndGameInput";
 import SmashBarContainer from "./SmashBarContainer";
+import Timer from "./Timer";
 
 //Bug found when smashBoxButton clicked when on the process of rendering new card
 const GamePlayBox: React.FC = () => {
@@ -21,7 +22,7 @@ const GamePlayBox: React.FC = () => {
 
   return (
     <>
-      <div>{timer}</div>
+      <Timer Timer={timer}/>
       <CardDeck
         cardsHook={[cardDeck, dispatch]}
         selectCardHook={[selectedCards, setSelectedCards]}
