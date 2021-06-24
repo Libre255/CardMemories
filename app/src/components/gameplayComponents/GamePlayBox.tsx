@@ -20,20 +20,19 @@ const GamePlayBox: React.FC = () => {
   });
   const { timer, timerReached0 } = useTimer();
   const { userInfo, setUserInfo } = useUserInfo({
-    timerReached0,
     selectedCards,
   });
 
   return (
     <>
-      <Timer Timer={timer}/>
+      <Timer Timer={timer} />
       <CardDeck
         cardsHook={[cardDeck, dispatch]}
         selectCardHook={[selectedCards, setSelectedCards]}
       />
       <SmashBarContainer smashBarState={[SmashBarPower, setSmashBarPower]} />
-      {userInfo.InsertUserName ? (
-        <EndGameInput setUserInfo={setUserInfo} />
+      {timerReached0 ? (
+        <EndGameInput userInfoState={[userInfo, setUserInfo]} />
       ) : (
         ""
       )}

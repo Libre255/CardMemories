@@ -1,13 +1,10 @@
-import React from 'react'
+import React from "react";
 
-interface Props{
-  Timer:number;
+interface Props {
+  Timer: number;
 }
-const Timer :React.FC<Props> = ({Timer}) => {
+const Timer: React.FC<Props> = ({ Timer }) => {
+  return <div>{Timer}</div>;
+};
 
-  return(
-    <div>{Timer}</div>
-  )
-}
-
-export default Timer 
+export default Timer;

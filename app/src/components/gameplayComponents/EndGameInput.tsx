@@ -1,13 +1,18 @@
 import React from "react";
 import { createPortal } from "react-dom";
-import "../../css/main.css";
 import { userInfoType } from "../../hooks/useUserInfo";
+import "../../css/main.css";
 
 interface Props {
-  setUserInfo: React.Dispatch<React.SetStateAction<userInfoType>>;
+  userInfoState: [
+    userInfoType,
+    React.Dispatch<React.SetStateAction<userInfoType>>
+  ];
 }
 
-const EndGameInput: React.FC<Props> = ({ setUserInfo }) => {
+const EndGameInput: React.FC<Props> = ({ userInfoState }) => {
+  const [userInfo, setUserInfo] = userInfoState;
+
   return createPortal(
     <div id="EndGameInput">
       <label>Insert Name </label>
