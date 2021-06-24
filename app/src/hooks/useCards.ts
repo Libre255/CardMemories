@@ -35,11 +35,11 @@ const useCards = () => {
       setTimeout(waitForAnimationToFlipDown, 1050);
     };
     const cardDeckHasBeenFilled = cardDeck.length > 1;
-    const maxCardsHasNotBeenReached = cardDeck.length < 6;
+    const thereIsMoreCardsOnDeck = cardDeck.length < 6;
     if (
+      foundAllMatchedCards &&
       !!cardDeckHasBeenFilled &&
-      !!maxCardsHasNotBeenReached &&
-      foundAllMatchedCards
+      !!thereIsMoreCardsOnDeck
     ) {
       addMoreCardsToDeck();
       console.log("all cards Flipped! :D");
