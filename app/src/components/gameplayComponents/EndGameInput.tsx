@@ -40,7 +40,10 @@ const EndGameInput: React.FC<Props> = ({ userInfoState }) => {
             setUserInfo((pv) => ({ ...pv, name: e.target.value }));
           }}
         />
-        <button onClick={sendUserInfo}>Submit</button>
+        <div id="endGameButtonsBox">
+          <button onClick={sendUserInfo}>Submit</button>
+          <button onClick={()=>window.location.reload()}>Exit</button>
+        </div>
       </div>
     </div>,
     document.body

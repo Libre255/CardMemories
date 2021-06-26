@@ -199,6 +199,10 @@
   width: 70px;
 }
 
+#EndGameInput #endGameBox button:nth-child(1) {
+  margin-right: 10px;
+}
+
 .testBox {
   border: 1px solid red;
 }
