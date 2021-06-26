@@ -44,9 +44,9 @@ const useSmashBarPower = ({ selectedCards, dispatch }: Props) => {
   }, [selectedCards]);
 
   useEffect(() => {
-    const flipAllCardsDown = ()=>{
-      dispatch({type:COMMANDS.Flip_AllCards_Down})
-    }
+    const flipAllCardsDown = () => {
+      dispatch({ type: COMMANDS.Flip_AllCards_Down });
+    };
     const resetAllSmashBarProperties = () => ({
       ActivatePower: false,
       ShowPowerButton: false,
@@ -55,7 +55,7 @@ const useSmashBarPower = ({ selectedCards, dispatch }: Props) => {
 
     if (SmashBarPower.ActivatePower) {
       dispatch({ type: COMMANDS.Flip_AllCards_Up });
-      setTimeout(flipAllCardsDown, 1000)
+      setTimeout(flipAllCardsDown, 1000);
       setSmashBarPower(resetAllSmashBarProperties());
     }
   }, [SmashBarPower, dispatch, setSmashBarPower]);

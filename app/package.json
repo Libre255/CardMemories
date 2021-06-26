@@ -47,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "date-fns": "^2.22.1",
     "prettier": "2.2.1"
   }
 }

@@ -22,7 +22,7 @@ const GamePlayBox: React.FC = () => {
   const { userInfo, setUserInfo } = useUserInfo({
     selectedCards,
   });
-  
+
   return (
     <>
       <Timer Timer={timer} />
