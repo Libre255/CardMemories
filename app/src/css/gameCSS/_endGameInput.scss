@@ -5,7 +5,14 @@
   position: absolute;
   z-index:1;
   background-color: rgba(43, 43, 43, 0.637);
-  label{
-    margin-right:10px;
+  #endGameBox{
+    input{
+      margin-bottom: 1rem;
+    }
+    button{
+      width: 70px;
+    }
+    display: flex;
+    flex-direction: column;
   }
 }

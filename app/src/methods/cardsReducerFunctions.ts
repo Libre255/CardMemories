@@ -65,5 +65,5 @@ export {
   addToCompleteDBDeck,
   updateAmountOfCards,
   flipAllCardsUp,
-  flipAllCardsDown
+  flipAllCardsDown,
 };

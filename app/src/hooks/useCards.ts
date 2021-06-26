@@ -31,13 +31,13 @@ const useCards = () => {
       };
       setTimeout(waitForAnimationToFlipDown, 1050);
     };
-    
+
     const cardDeckHasBeenFilled = cardDeck.length > 1;
     const thereIsMoreCardsOnDeck = cardDeck.length < 10;
     const foundAllMatchedCards = cardDeck.every(
       (card) => card.flippCard === true
     );
-    
+
     if (
       foundAllMatchedCards &&
       cardDeckHasBeenFilled &&

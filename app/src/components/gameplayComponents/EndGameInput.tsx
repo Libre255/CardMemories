@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import { userInfoType } from "../../hooks/useUserInfo";
 import "../../css/main.css";
+import axios from "axios";
 
 interface Props {
   userInfoState: [
@@ -12,15 +13,35 @@ interface Props {
 
 const EndGameInput: React.FC<Props> = ({ userInfoState }) => {
   const [userInfo, setUserInfo] = userInfoState;
+  const [alert, setAlert] = useState<string>("");
+
+  const sendUserInfo = () => {
+    if (!userInfo.name) {
+      setAlert("red");
+    } else {
+      axios.post("/ranking", {
+        name: userInfo.name,
+        score: userInfo.score,
+        date: userInfo.date,
+      });
+      window.location.reload();
+    }
+  };
 
   return createPortal(
     <div id="EndGameInput">
-      <label>Insert Name </label>
-      <input
-        type="text"
-        onChange={(e) => setUserInfo((pv) => ({ ...pv, name: e.target.value }))}
-      />
-      <button>Submit</button>
+      <div id="endGameBox">
+        <input
+          type="text"
+          placeholder="Insert Name"
+          style={{ border: `3px solid ${alert}` }}
+          onChange={(e) => {
+            setAlert("black");
+            setUserInfo((pv) => ({ ...pv, name: e.target.value }));
+          }}
+        />
+        <button onClick={sendUserInfo}>Submit</button>
+      </div>
     </div>,
     document.body
   );

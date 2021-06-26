@@ -18,7 +18,7 @@ const COMMANDS: Commands = {
   Reset_DeckOfCards: "reset cardDeck",
   Flip_Selected_Cards_Down: "flip selected cards down because they didnt match",
   Flip_AllCards_Up: "flipp all cards up when smashBar is filled",
-  Flip_AllCards_Down:"Flipp all cards down after 1second"
+  Flip_AllCards_Down: "Flipp all cards down after 1second",
 };
 const initialState: InitialStateType = {
   cardDeck: [],
