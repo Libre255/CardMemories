@@ -24,9 +24,6 @@ const useCards = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    const foundAllMatchedCards = cardDeck.every(
-      (card) => card.flippCard === true
-    );
     const addMoreCardsToDeck = () => {
       const waitForAnimationToFlipDown = () => {
         dispatch({ type: COMMANDS.Update_Amount_of_ParCards });
@@ -34,12 +31,17 @@ const useCards = () => {
       };
       setTimeout(waitForAnimationToFlipDown, 1050);
     };
+    
     const cardDeckHasBeenFilled = cardDeck.length > 1;
-    const thereIsMoreCardsOnDeck = cardDeck.length < 6;
+    const thereIsMoreCardsOnDeck = cardDeck.length < 10;
+    const foundAllMatchedCards = cardDeck.every(
+      (card) => card.flippCard === true
+    );
+    
     if (
       foundAllMatchedCards &&
-      !!cardDeckHasBeenFilled &&
-      !!thereIsMoreCardsOnDeck
+      cardDeckHasBeenFilled &&
+      thereIsMoreCardsOnDeck
     ) {
       addMoreCardsToDeck();
       console.log("all cards Flipped! :D");

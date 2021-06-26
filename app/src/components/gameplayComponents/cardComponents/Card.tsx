@@ -24,7 +24,7 @@ const Card: React.FC<Props> = ({ selectedCardsState, cardInfo, dispatch }) => {
     }
   };
 
-  if (cardInfo.flippCard) {
+  if (cardInfo.flippCard || cardInfo.smashCard) {
     return <FrontCard cardValue={cardInfo.value} />;
   } else {
     return <BackCard onCardClick={onCardClick} />;

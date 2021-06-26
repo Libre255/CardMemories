@@ -11,10 +11,12 @@ const addCards = (amountOfCards:number)=>{
       cardsArray.push({
         id:id+=1,
         value:i + 1,
-        flippCard:false
+        smashCard:false,
+        flippCard:false,
       })
     }
   };
+
   cardsArray.forEach(card =>{
     firebaseDB.collection('cardsInfo').doc(card.id.toString()).set(card)
   });

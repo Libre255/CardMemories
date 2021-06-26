@@ -7,9 +7,10 @@ const getCards = async ()=>{
   cardsDB.forEach(card => cardsArray.push({
     id:card.data().id,
     value:card.data().value,
-    flippCard:card.data().flippCard
+    flippCard:card.data().flippCard,
+    smashCard:card.data().smashCard
   }))
-  return cardsArray
+  return cardsArray.sort((a,b)=> a.id-b.id)
 }
 
 export {getCards}
