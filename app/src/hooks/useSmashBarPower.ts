@@ -22,17 +22,17 @@ const useSmashBarPower = ({ selectedCards, dispatch }: Props) => {
 
   useEffect(() => {
     const updateSmashBarProcent = (smashBar: SmashBarType) => {
-      const maxPowerProcent: number = 20;
-      const updatedSmashProcent: number = smashBar.powerProcent + 10;
+      const maxPowerProcent: number = 10;
+      const addedSmashProcent: number = smashBar.powerProcent + 10;
 
-      if (updatedSmashProcent >= 20) {
+      if (addedSmashProcent >= maxPowerProcent) {
         return {
           ...smashBar,
-          powerProcent: maxPowerProcent,
+          powerProcent: addedSmashProcent,
           ShowPowerButton: true,
         };
       } else {
-        return { ...smashBar, powerProcent: updatedSmashProcent };
+        return { ...smashBar, powerProcent: addedSmashProcent };
       }
     };
 
@@ -44,6 +44,9 @@ const useSmashBarPower = ({ selectedCards, dispatch }: Props) => {
   }, [selectedCards]);
 
   useEffect(() => {
+    const flipAllCardsDown = ()=>{
+      dispatch({type:COMMANDS.Flip_AllCards_Down})
+    }
     const resetAllSmashBarProperties = () => ({
       ActivatePower: false,
       ShowPowerButton: false,
@@ -52,6 +55,7 @@ const useSmashBarPower = ({ selectedCards, dispatch }: Props) => {
 
     if (SmashBarPower.ActivatePower) {
       dispatch({ type: COMMANDS.Flip_AllCards_Up });
+      setTimeout(flipAllCardsDown, 1000)
       setSmashBarPower(resetAllSmashBarProperties());
     }
   }, [SmashBarPower, dispatch, setSmashBarPower]);

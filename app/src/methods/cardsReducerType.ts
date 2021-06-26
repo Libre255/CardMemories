@@ -8,6 +8,7 @@ export interface Commands {
   Update_Amount_of_ParCards: string;
   Flip_Selected_Cards_Down: string;
   Flip_AllCards_Up: string;
+  Flip_AllCards_Down:string;
 }
 export interface InitialStateType {
   cardDeck: CardsAPI[];

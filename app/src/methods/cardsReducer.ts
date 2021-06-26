@@ -1,6 +1,7 @@
 import {
   addCardsToDeck,
   addToCompleteDBDeck,
+  flipAllCardsDown,
   flipAllCardsUp,
   flipCardUP,
   flipSelectedCardsDown,
@@ -17,6 +18,7 @@ const COMMANDS: Commands = {
   Reset_DeckOfCards: "reset cardDeck",
   Flip_Selected_Cards_Down: "flip selected cards down because they didnt match",
   Flip_AllCards_Up: "flipp all cards up when smashBar is filled",
+  Flip_AllCards_Down:"Flipp all cards down after 1second"
 };
 const initialState: InitialStateType = {
   cardDeck: [],
@@ -38,6 +40,8 @@ const reducer = (state: InitialStateType, action: Action) => {
       return flipSelectedCardsDown(state, action);
     case COMMANDS.Flip_AllCards_Up:
       return flipAllCardsUp(state);
+    case COMMANDS.Flip_AllCards_Down:
+      return flipAllCardsDown(state);
     default:
       return state;
   }

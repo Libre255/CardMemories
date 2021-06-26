@@ -44,10 +44,18 @@ const addCardsToDeck = (state: InitialStateType) => {
 
 const flipAllCardsUp = (state: InitialStateType) => {
   const allCardsFlippedUP = state.cardDeck.map((card) => {
-    card.flippCard = true;
+    card.smashCard = true;
     return card;
   });
   return { ...state, cardDeck: allCardsFlippedUP };
+};
+
+const flipAllCardsDown = (state: InitialStateType) => {
+  const allCardsFlippedDOWN = state.cardDeck.map((card) => {
+    card.smashCard = false;
+    return card;
+  });
+  return { ...state, cardDeck: allCardsFlippedDOWN };
 };
 
 export {
@@ -57,4 +65,5 @@ export {
   addToCompleteDBDeck,
   updateAmountOfCards,
   flipAllCardsUp,
+  flipAllCardsDown
 };

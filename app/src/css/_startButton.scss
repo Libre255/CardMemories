@@ -1,0 +1,6 @@
+#startButton{
+  margin: 0 auto;
+  @include flexCenter();
+  @include createBox(50%, 15%);;
+  background-color: rgb(53, 4, 4);
+};
