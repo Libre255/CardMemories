@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { COMMANDS } from "../methods/cardsReducer";
-import { Action } from "../methods/cardsReducerType";
-import { CardsAPI } from "../service/cards/CardsAPI";
+import { COMMANDS } from "../reducer/cardsReducer";
+import { Action } from "../reducer/cardsReducerType";
+import { CardsAPI } from "../../../service/cards/CardsAPI";
 
 interface Props {
   dispatch: React.Dispatch<Action>;

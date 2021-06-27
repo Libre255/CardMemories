@@ -1,5 +1,5 @@
 import React from "react";
-import GameMainComponent from "./gameplayComponents/GameMainComponent";
+import GameMainComponent from "./GameMainComponent";
 
 const HomePage: React.FC = () => {
   return (

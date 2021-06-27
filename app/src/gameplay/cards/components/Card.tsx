@@ -2,8 +2,8 @@ import React from "react";
 import BackCard from "./BackCard";
 import FrontCard from "./FrontCards";
 import { CardsAPI } from "../../../service/cards/CardsAPI";
-import { Action } from "../../../methods/cardsReducerType";
-import { COMMANDS } from "../../../methods/cardsReducer";
+import { Action } from "../reducer/cardsReducerType";
+import { COMMANDS } from "../reducer/cardsReducer";
 
 interface Props {
   cardInfo: CardsAPI;

@@ -1,4 +1,4 @@
-import { CardsAPI } from "../service/cards/CardsAPI";
+import { CardsAPI } from "../../../service/cards/CardsAPI";
 import { Action, InitialStateType } from "./cardsReducerType";
 
 const updateAmountOfCards = (state: InitialStateType) => ({

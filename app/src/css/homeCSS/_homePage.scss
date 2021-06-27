@@ -2,5 +2,5 @@
   margin: 10px auto;
   @include createBox(85vh, $mainBoxWidth);
   //Sub Components
-  @import './gameCSS/gameMainCSS'; 
+  @import '../gameCSS/gameMainCSS'; 
 }

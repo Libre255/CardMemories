@@ -1,5 +1,5 @@
 import React from "react";
-import { useRankingList } from "../../hooks/useRankingList";
+import { useRankingList } from "../hooks/useRankingList";
 
 const RankingList: React.FC = () => {
   const { rankingList } = useRankingList();

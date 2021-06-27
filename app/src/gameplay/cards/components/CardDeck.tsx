@@ -1,5 +1,5 @@
 import React from "react";
-import { Action } from "../../../methods/cardsReducerType";
+import { Action } from "../reducer/cardsReducerType";
 import { CardsAPI } from "../../../service/cards/CardsAPI";
 import Card from "./Card";
 

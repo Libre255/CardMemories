@@ -1,4 +1,4 @@
-import { CardsAPI } from "../service/cards/CardsAPI";
+import { CardsAPI } from "../../../service/cards/CardsAPI";
 
 export interface Commands {
   Add_to_DB_Deck: string;
