@@ -10,9 +10,9 @@ $mainBoxWidth:95vw;
   align-items: center
 }
 
-@import './menu';
-@import './homePage';
-@import './startButton';
+@import './menuCSS/menu';
+@import './homeCSS/homePage';
+@import './homeCSS/startButton';
 @import './rankingCSS/rankingMainCSS';
 @import './gameCSS/endGameInput';
 

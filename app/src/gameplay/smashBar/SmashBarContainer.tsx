@@ -1,5 +1,5 @@
 import React from "react";
-import { SmashBarType } from "../../hooks/useSmashBarPower";
+import { SmashBarType } from "./useSmashBarPower";
 interface Props {
   smashBarState: [
     SmashBarType,

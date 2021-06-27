@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import GamePlayBox from "./GamePlayBox";
+import GamePlayBox from "../gameplay/GamePlayBox";
 import StartButton from "./StartButton";
 
 const GameMainComponent: React.FC = () => {

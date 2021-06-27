@@ -1,13 +1,13 @@
 import React from "react";
-import { useCards } from "../../hooks/useCards";
-import { useSelectedCards } from "../../hooks/useSelectedCards";
-import { useSmashBarPower } from "../../hooks/useSmashBarPower";
-import { useTimer } from "../../hooks/useTimer";
-import { useUserInfo } from "../../hooks/useUserInfo";
-import CardDeck from "./cardComponents/CardDeck";
-import EndGameInput from "./EndGameInput";
-import SmashBarContainer from "./SmashBarContainer";
-import Timer from "./Timer";
+import { useCards } from "./cards/hooks/useCards";
+import { useSelectedCards } from "./cards/hooks/useSelectedCards";
+import { useSmashBarPower } from "./smashBar/useSmashBarPower";
+import { useTimer } from "./timer/useTimer";
+import { useUserInfo } from "../common/hooks/useUserInfo";
+import CardDeck from "./cards/components/CardDeck";
+import EndGameInput from "./endGame/EndGameInput";
+import SmashBarContainer from "./smashBar/SmashBarContainer";
+import Timer from "./timer/Timer";
 
 //Bug found when smashBoxButton clicked when on the process of rendering new card
 //After smashButton clicked return all cards face down.

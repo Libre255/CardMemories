@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
-import { userInfoType } from "../../hooks/useUserInfo";
+import { userInfoType } from "../../common/hooks/useUserInfo";
 import "../../css/main.css";
 import axios from "axios";
 

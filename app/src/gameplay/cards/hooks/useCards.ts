@@ -1,6 +1,6 @@
 import { useEffect, useReducer, useState } from "react";
-import { COMMANDS, initialState, reducer } from "../methods/cardsReducer";
-import { getCards } from "../service/cards/CardsService";
+import { COMMANDS, initialState, reducer } from "../reducer/cardsReducer";
+import { getCards } from "../../../service/cards/CardsService";
 
 const useCards = () => {
   const [{ cardDeck }, dispatch] = useReducer(reducer, initialState);

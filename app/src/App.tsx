@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./components/HomePage";
-import Menu from "./components/Menu";
-import RankingPage from "./components/rankingComponents/RankingPage";
+import HomePage from "./home/HomePage";
+import Menu from "./menu/Menu";
+import RankingPage from "./ranking/components/RankingPage";
 import "./css/main.css";
 import "animate.css";
 

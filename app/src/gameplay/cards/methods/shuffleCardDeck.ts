@@ -1,4 +1,4 @@
-import { CardsAPI } from "../service/cards/CardsAPI";
+import { CardsAPI } from "../../../service/cards/CardsAPI";
 
 const shuffleCardDeck = (cardDeck: CardsAPI[]): CardsAPI[] => {
   for (let i = cardDeck.length - 1; i > 0; i--) {

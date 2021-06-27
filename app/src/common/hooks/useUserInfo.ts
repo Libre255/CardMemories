@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 import { useEffect, useState } from "react";
-import { CardsAPI } from "../service/cards/CardsAPI";
+import { CardsAPI } from "../../service/cards/CardsAPI";
 
 export interface userInfoType {
   score: number;

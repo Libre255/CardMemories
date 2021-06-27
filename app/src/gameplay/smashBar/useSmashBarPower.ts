@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { COMMANDS } from "../methods/cardsReducer";
-import { Action } from "../methods/cardsReducerType";
-import { CardsAPI } from "../service/cards/CardsAPI";
+import { COMMANDS } from "../cards/reducer/cardsReducer";
+import { Action } from "../cards/reducer/cardsReducerType";
+import { CardsAPI } from "../../service/cards/CardsAPI";
 
 interface Props {
   selectedCards: CardsAPI[];
