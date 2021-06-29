@@ -24,7 +24,7 @@ const useSmashBarPower = ({ selectedCards, dispatch }: Props) => {
     const maxPowerProcent: number = 10;
     const updateSmashBarProcent = (smashBar: SmashBarType) => {
       const addedSmashProcent: number = smashBar.powerProcent + 10;
-      
+
       if (addedSmashProcent >= maxPowerProcent) {
         return {
           ...smashBar,
@@ -38,9 +38,8 @@ const useSmashBarPower = ({ selectedCards, dispatch }: Props) => {
 
     if (selectedCards.length === 2) {
       if (selectedCards[0].value === selectedCards[1].value) {
-        if(SmashBarPower.powerProcent === maxPowerProcent){
-
-        }else{
+        if (SmashBarPower.powerProcent === maxPowerProcent) {
+        } else {
           setSmashBarPower((smashBar) => updateSmashBarProcent(smashBar));
         }
       }

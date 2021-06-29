@@ -1,9 +1,11 @@
+@import './playerBox';
 #RankingPage{
-  margin: 0 auto;
   @include createBox(85vh, $mainBoxWidth);
-  #RankingList{
-    margin: 0 auto;
-    @include flexCenter();
-    @include createBox(83%, 80%);
+  @include flexCenter();
+  margin:0 auto;
+  #RankingList-grid{
+    @include createBox(83%, fit-content);
+    display: flex;
+    flex-direction: column;
   }
 }
