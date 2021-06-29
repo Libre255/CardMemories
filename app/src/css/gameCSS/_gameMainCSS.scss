@@ -1,14 +1,13 @@
 @import './SmashButton';
 
-#gameMain-flexBox{
-  margin: 20px auto;
-  @include flexCenter();
-  @include createBox(83%, 80%);
+#gameMain-grid{
+  border:5px solid green;
+  margin: 0 auto;
+  display: grid;
+  width: fit-content;
   .cardComponent{
-    height: 70%;
-    width: 20%; 
-    margin-left: 15px;
-    border:5px solid whitesmoke;
+    margin: 15px;
+    border:2px solid whitesmoke;
     border-radius: 10px;
     animation-delay: 0.3s;
   };

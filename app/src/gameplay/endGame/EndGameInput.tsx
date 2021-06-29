@@ -42,7 +42,7 @@ const EndGameInput: React.FC<Props> = ({ userInfoState }) => {
         />
         <div id="endGameButtonsBox">
           <button onClick={sendUserInfo}>Submit</button>
-          <button onClick={()=>window.location.reload()}>Exit</button>
+          <button onClick={() => window.location.reload()}>Exit</button>
         </div>
       </div>
     </div>,
