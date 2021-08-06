@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { RankingAPI } from "../../service/ranking/RankingAPI";
 
 interface Props {
   playerInfo: RankingAPI;
+  ranking:number;
 }
 
-const PlayerBox: React.FC<Props> = ({ playerInfo }) => {
+const PlayerBox: React.FC<Props> = ({ playerInfo, ranking }) => {
+  const [colorOfRanking, setColorOfRanking] = useState('')
+  useEffect(()=>{
+    switch (ranking) {
+      case 0:setColorOfRanking('gold') 
+      break;
+      case 1:setColorOfRanking('grey')
+      break;
+      case 2:setColorOfRanking('brown')
+        break;
+      default:
+        break;
+    }
+  }, [colorOfRanking])
   return (
     <div className="player-FlexBox">
-      <div className="playerBoxConfig">ranking badge</div>
       <div className="playerNameAndDate playerBoxConfig">
-        <span>{playerInfo.name}</span>
+        <span style={{color:colorOfRanking}}>{playerInfo.name}</span>
         <span>{playerInfo.date}</span>
       </div>
       <div className="playerScore playerBoxConfig">

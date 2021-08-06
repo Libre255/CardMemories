@@ -7,8 +7,9 @@ const RankingList: React.FC = () => {
 
   return (
     <div id="RankingList-grid" className="testBox">
-      {rankingList.map((player) => (
-        <PlayerBox playerInfo={player} />
+      <div id="RankingTitle">Ranking</div>
+      {rankingList.map((player, index) => (
+        index < 5? <PlayerBox playerInfo={player} ranking={index} /> : ""
       ))}
     </div>
   );

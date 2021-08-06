@@ -1,11 +1,22 @@
-@import './playerBox';
 #RankingPage{
-  @include createBox(85vh, $mainBoxWidth);
+  @include createBox(85vh, 35vw);
   @include flexCenter();
   margin:0 auto;
+  background-color: black;
+  color: whitesmoke;
+  background-size: contain;
+  background-size: 25vw;
+  background-repeat: no-repeat;
+  background-position-y: 15vw;
+  background-position-x: 5vw;
   #RankingList-grid{
     @include createBox(83%, fit-content);
     display: flex;
     flex-direction: column;
+    #RankingTitle{
+      text-align: center;
+      font-size: 5vw;
+    }
   }
 }
+@import './playerBox';

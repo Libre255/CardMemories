@@ -1,15 +1,22 @@
 .player-FlexBox{
   @include createBox(20%, 100%);
   display: flex;
-  border:1px solid orange;
+  border-left: 0;
+  border-right: 0;
+  margin:0.5vw 0;
+  span{
+    font-weight: bold;
+    background-color: black;
+  }
   .playerBoxConfig{
     @include createBox(80%, 200px);
+    @include flexCenter();
     margin: 10px;
-    border: 1px solid green;
   }
   .playerNameAndDate{
     display: flex;
     flex-direction: column;
+    
   }
   .playerScore{
     @include createBox(80%, 230px);
