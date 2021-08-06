@@ -3,8 +3,7 @@ import GameMainComponent from "./GameMainComponent";
 
 const HomePage: React.FC = () => {
   return (
-    <div id="homePage" className="testBox">
-      HomePage
+    <div id="homePage">
       <GameMainComponent />
     </div>
   );

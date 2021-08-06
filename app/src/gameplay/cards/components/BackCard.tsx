@@ -7,6 +7,7 @@ const BackCard: React.FC<BackCardProps> = ({ onCardClick }) => {
     <div
       onClick={() => onCardClick()}
       className={`cardComponent backCard animate__animated animate__fadeIn`}
+      style={{ backgroundImage: `url("/img/goldenflower.jpg")` }}
     />
   );
 };

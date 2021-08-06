@@ -34,14 +34,14 @@ const useCards = () => {
 
     const cardDeckHasBeenFilled = cardDeck.length > 1;
     const thereIsMoreCardsOnDeck = cardDeck.length < 10;
-    const foundAllMatchedCards = cardDeck.every(
-      (card) => card.flippCard === true
-    );
+    const foundAllMatchedCards = cardDeck.every((card) => card.flippCard);
+    const smashCardsFalse = cardDeck.every((card) => !card.smashCard);
 
     if (
       foundAllMatchedCards &&
       cardDeckHasBeenFilled &&
-      thereIsMoreCardsOnDeck
+      thereIsMoreCardsOnDeck &&
+      smashCardsFalse
     ) {
       addMoreCardsToDeck();
       console.log("all cards Flipped! :D");

@@ -1,7 +1,17 @@
+@font-face {
+  font-family: 'erikut';
+  src: url("../common/fonts/Erikut_PersonalUseOnly.ttf");
+}
+
+@font-face {
+  font-family: 'vogue';
+  src: url("../common/fonts/Vogue.ttf");
+}
+
 #menu {
   height: 11vh;
   width: 95vw;
-  margin: 10px auto;
+  margin: 0.5vw auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,9 +33,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 65px;
-  width: 200px;
-  border: 1px solid goldenrod;
+  height: 4vw;
+  width: 12vw;
+  border: 1px solid #9f7015;
   border-radius: 10px;
 }
 
@@ -40,8 +50,8 @@
 }
 
 #homePage #SmashBarBox {
-  height: 5%;
-  width: 80%;
+  height: 2vw;
+  width: 48vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,25 +60,17 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid red;
   margin: 0 auto;
 }
 
 #homePage #SmashBarBox #SmashBar {
-  height: 30px;
+  height: 1vw;
   width: 80%;
-  border: 1px solid yellow;
+  border: 1px solid rgba(0, 0, 0, 0.411);
+  border-radius: 5px;
 }
 
 #homePage #SmashBarBox #SmashBar #SmashBarPoints {
-  height: 30px;
-  width: 0%;
-  background-color: brown;
-}
-
-#homePage #SmashBarBox #SmashButton {
-  height: 40px;
-  width: 8%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -78,13 +80,50 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: burlywood;
-  color: black;
-  border-radius: 15px;
+  height: 1vw;
+  width: 0%;
+  background-color: #050504;
+}
+
+#homePage #SmashBarBox #SmashBar #SmashBarPoints img {
+  height: inherit;
+  width: 100%;
+}
+
+#homePage #SmashBarBox #SmashButton {
+  height: 2.5vw;
+  width: 5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+  color: whitesmoke;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#homePage #mainGameContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#homePage #mainGameContainer #timer {
+  margin: 0 auto;
+  font-size: 2.5vw;
 }
 
 #homePage #gameMain-grid {
-  border: 5px solid green;
   margin: 0 auto;
   display: -ms-grid;
   display: grid;
@@ -96,13 +135,15 @@
 #homePage #gameMain-grid .cardComponent {
   margin: 15px;
   border: 2px solid whitesmoke;
-  border-radius: 10px;
+  border-radius: 15px;
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
 }
 
 #homePage #gameMain-grid .backCard {
-  background-color: #080852;
+  border: 2px solid #9f7015;
+  background-size: cover;
+  cursor: pointer;
 }
 
 #homePage #gameMain-grid .frontCard {
@@ -116,11 +157,11 @@
       -ms-flex-align: center;
           align-items: center;
   font-size: 7rem;
-  background-color: #797979;
+  background-color: black;
+  color: whitesmoke;
 }
 
-#startButton {
-  margin: 0 auto;
+#homePage #gameMain-grid .frontCard span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -130,9 +171,30 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 50%;
-  width: 15%;
-  background-color: #350404;
+  border: 1px solid goldenrod;
+  height: 100%;
+}
+
+#startButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 25vw;
+  width: 17vw;
+  margin: 7vw auto;
+  background-color: black;
+  border: 2px solid #9f7015;
+  border-radius: 1vw;
+  color: #9f7015;
+  font-size: 3vw;
+  text-align: center;
+  cursor: pointer;
 }
 
 .player-FlexBox {
@@ -226,37 +288,65 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
+  height: 10vw;
+  background-color: black;
+}
+
+#EndGameInput #endGameBox #endGameTitle {
+  color: whitesmoke;
+  margin-bottom: 1vw;
 }
 
 #EndGameInput #endGameBox input {
+  width: 10vw;
   margin-bottom: 1rem;
 }
 
-#EndGameInput #endGameBox button {
-  width: 70px;
+#EndGameInput #endGameBox #endGameButtonsBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 15vw;
 }
 
-#EndGameInput #endGameBox button:nth-child(1) {
-  margin-right: 10px;
+#EndGameInput #endGameBox #endGameButtonsBox span {
+  display: block;
+  width: 4.5vw;
+  border: 1px solid #9f7015;
+  margin: 0.2vw;
+  color: whitesmoke;
+  border-radius: 5px;
+  text-align: center;
+  padding: 3px;
 }
 
-.testBox {
-  border: 1px solid red;
-}
-
-.testBox2 {
-  border: 1px solid green;
+#EndGameInput #endGameBox #endGameButtonsBox span:hover {
+  cursor: pointer;
 }
 
 body {
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: whitesmoke;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'vogue';
+  font-size: 1.2vw;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

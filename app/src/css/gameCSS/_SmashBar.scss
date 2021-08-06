@@ -1,0 +1,31 @@
+#SmashBarBox{
+  @include createBox(2vw, 48vw);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  // border:1px solid red;
+  margin: 0 auto;
+  
+  #SmashBar{
+    @include createBox(1vw, 80%);
+    border: 1px solid rgba(0, 0, 0, 0.411);
+    border-radius: 5px;
+    #SmashBarPoints{
+      @include flexCenter();
+      @include createBox(1vw, 0%);
+      background-color: rgb(5, 5, 4);
+      img{
+        height: inherit;
+        width: 100%;
+      }
+    }
+  }
+  #SmashButton{
+    @include createBox(2.5vw, 5vw);
+    @include flexCenter();
+    background-color: rgb(0, 0, 0);
+    color:whitesmoke;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

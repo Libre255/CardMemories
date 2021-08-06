@@ -7,10 +7,14 @@ const StartButton: React.FC<Props> = ({ setStartGame }) => {
   return (
     <div
       id="startButton"
-      className="testBox2"
+      className="animate__animated animate__fadeIn"
       onClick={() => setStartGame(true)}
     >
-      Start Button
+      <span>
+        Start
+        <br />
+        Game
+      </span>
     </div>
   );
 };

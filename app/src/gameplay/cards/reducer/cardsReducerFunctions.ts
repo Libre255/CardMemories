@@ -11,7 +11,7 @@ const addToCompleteDBDeck = (state: InitialStateType, action: Action) => ({
   CompleteDBDeck: action.cardsFromDB ?? [],
 });
 
-const flipCardUP = (state: InitialStateType, action: Action) => {
+const flipSelectedCardUp = (state: InitialStateType, action: Action) => {
   const flippedOneCard = state.cardDeck.map((card) => {
     if (card.id === action.cardSelected?.id) card.flippCard = true;
     return card;
@@ -20,7 +20,7 @@ const flipCardUP = (state: InitialStateType, action: Action) => {
   return { ...state, cardDeck: flippedOneCard };
 };
 
-const flipSelectedCardsDown = (state: InitialStateType, action: Action) => {
+const flipSelectedCardDown = (state: InitialStateType, action: Action) => {
   const flipBackDown = state.cardDeck.map((card) => {
     if (
       action.selectedCards?.some((selectedCard) => selectedCard.id === card.id)
@@ -60,8 +60,8 @@ const flipAllCardsDown = (state: InitialStateType) => {
 
 export {
   addCardsToDeck,
-  flipSelectedCardsDown,
-  flipCardUP,
+  flipSelectedCardDown,
+  flipSelectedCardUp,
   addToCompleteDBDeck,
   updateAmountOfCards,
   flipAllCardsUp,

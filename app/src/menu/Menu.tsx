@@ -4,17 +4,20 @@ import { useNavigate } from "react-router";
 const Menu: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <div id="menu" className="testBox">
+    <div id="menu">
       <div
         onClick={() => {
           navigate("/");
           window.location.reload();
         }}
-        className="testBox menuButtons"
+        className="menuButtons animate__animated animate__fadeIn"
       >
-        Start New Game!
+        Start New Game
       </div>
-      <div onClick={() => navigate("/ranking")} className="testBox menuButtons">
+      <div
+        onClick={() => navigate("/ranking")}
+        className="menuButtons animate__animated animate__fadeIn"
+      >
         Ranking{" "}
       </div>
     </div>

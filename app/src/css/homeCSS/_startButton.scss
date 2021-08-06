@@ -1,6 +1,13 @@
 #startButton{
-  margin: 0 auto;
   @include flexCenter();
-  @include createBox(50%, 15%);;
-  background-color: rgb(53, 4, 4);
+  @include createBox(25vw, 17vw);;
+  margin: 7vw auto;
+  // background-color: rgb(53, 4, 4);
+  background-color: black;
+  border:2px solid $maincolor;
+  border-radius: 1vw;
+  color:$maincolor;
+  font-size: 3vw;
+  text-align: center;
+  cursor: pointer;
 };

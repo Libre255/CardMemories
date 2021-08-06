@@ -20,7 +20,6 @@ const CardDeck: React.FC<Props> = ({ cardsHook, selectCardHook }) => {
   return (
     <div
       id="gameMain-grid"
-      className="testBox2"
       style={{
         gridTemplateColumns: rowColumn.column,
         gridTemplateRows: rowColumn.row,

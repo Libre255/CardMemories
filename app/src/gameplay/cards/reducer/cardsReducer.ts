@@ -3,8 +3,8 @@ import {
   addToCompleteDBDeck,
   flipAllCardsDown,
   flipAllCardsUp,
-  flipCardUP,
-  flipSelectedCardsDown,
+  flipSelectedCardUp,
+  flipSelectedCardDown,
   updateAmountOfCards,
 } from "./cardsReducerFunctions";
 import { Action, Commands, InitialStateType } from "./cardsReducerType";
@@ -35,9 +35,9 @@ const reducer = (state: InitialStateType, action: Action) => {
     case COMMANDS.Update_Amount_of_ParCards:
       return updateAmountOfCards(state);
     case COMMANDS.Flipp_Card_UP:
-      return flipCardUP(state, action);
+      return flipSelectedCardUp(state, action);
     case COMMANDS.Flip_Selected_Cards_Down:
-      return flipSelectedCardsDown(state, action);
+      return flipSelectedCardDown(state, action);
     case COMMANDS.Flip_AllCards_Up:
       return flipAllCardsUp(state);
     case COMMANDS.Flip_AllCards_Down:

@@ -31,6 +31,7 @@ const EndGameInput: React.FC<Props> = ({ userInfoState }) => {
   return createPortal(
     <div id="EndGameInput">
       <div id="endGameBox">
+        <span id="endGameTitle">Submit Score</span>
         <input
           type="text"
           placeholder="Insert Name"
@@ -41,8 +42,8 @@ const EndGameInput: React.FC<Props> = ({ userInfoState }) => {
           }}
         />
         <div id="endGameButtonsBox">
-          <button onClick={sendUserInfo}>Submit</button>
-          <button onClick={() => window.location.reload()}>Exit</button>
+          <span onClick={sendUserInfo}>Submit</span>
+          <span onClick={() => window.location.reload()}>Exit</span>
         </div>
       </div>
     </div>,

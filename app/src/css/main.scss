@@ -9,6 +9,16 @@ $mainBoxWidth:95vw;
   justify-content: center;
   align-items: center
 }
+$maincolor: #9f7015;
+
+@font-face {
+  font-family: 'erikut';
+  src: url('../common/fonts/Erikut_PersonalUseOnly.ttf');
+}
+@font-face {
+  font-family: 'vogue';
+  src: url('../common/fonts/Vogue.ttf');
+}
 
 @import './menuCSS/menu';
 @import './homeCSS/homePage';
@@ -16,24 +26,13 @@ $mainBoxWidth:95vw;
 @import './rankingCSS/rankingMainCSS';
 @import './gameCSS/endGameInput';
 
-//Test Div position
-.testBox{
-  border:1px solid red;
-}
-.testBox2{
-  border:1px solid green;
-}
-
-
-
 //Basic Global Settings 
 body {
-  color:white;
-  background-color: black;
+  color:rgb(0, 0, 0);
+  background-color:whitesmoke;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:'vogue';
+  font-size: 1.2vw;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
