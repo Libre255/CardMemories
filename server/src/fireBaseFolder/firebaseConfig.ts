@@ -1,8 +1,12 @@
 import admin, {ServiceAccount} from 'firebase-admin';
-import serviceAccount from '../misLlaves/llave.json';
+require('dotenv').config()
 
 admin.initializeApp({
-  credential:admin.credential.cert(serviceAccount as ServiceAccount)
+  credential:admin.credential.cert({
+    "projectId": process.env.FIREBASE_PROJECT_ID,
+    "private_key": process.env.FIREBASE_PRIVATE_KEY,
+    "client_email": process.env.FIREBASE_CLIENT_EMAIL,
+  } as ServiceAccount)
 })
 
 const firebaseDB = admin.firestore();
