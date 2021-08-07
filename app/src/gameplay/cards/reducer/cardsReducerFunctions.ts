@@ -16,7 +16,6 @@ const flipSelectedCardUp = (state: InitialStateType, action: Action) => {
     if (card.id === action.cardSelected?.id) card.flippCard = true;
     return card;
   });
-  console.log("flipcardUp ", state);
   return { ...state, cardDeck: flippedOneCard };
 };
 
@@ -38,7 +37,6 @@ const addCardsToDeck = (state: InitialStateType) => {
     deck = [...deck, { ...state.CompleteDBDeck[i] }];
   }
   const addedNewCards = { ...state, cardDeck: deck };
-  console.log("Added New Cards:", addedNewCards);
   return addedNewCards;
 };
 

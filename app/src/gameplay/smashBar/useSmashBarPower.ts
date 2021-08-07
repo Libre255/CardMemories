@@ -25,7 +25,6 @@ const useSmashBarPower = ({ selectedCards, dispatch }: Props) => {
     
     const updateSmashBarProcent = (smashBar: SmashBarType) => {
       const addedSmashProcent: number = smashBar.powerProcent + 10;
-      console.log(addedSmashProcent)
       if (addedSmashProcent >= maxPowerProcent) {
         return {
           ...smashBar,

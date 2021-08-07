@@ -15,7 +15,6 @@ const useCards = () => {
         }
         dispatch({ type: COMMANDS.Add_to_DB_Deck, cardsFromDB: cardsArray });
         dispatch({ type: COMMANDS.Add_Cards_To_Deck });
-        console.log("fetched Cars :D!");
       } catch (error) {
         setError(error);
       }
@@ -44,7 +43,6 @@ const useCards = () => {
       smashCardsFalse
     ) {
       addMoreCardsToDeck();
-      console.log("all cards Flipped! :D");
     }
   }, [cardDeck, dispatch]);
 
