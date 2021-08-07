@@ -30,7 +30,8 @@ const PlayerBox: React.FC<Props> = ({ playerInfo, ranking }) => {
         <span>{playerInfo.date}</span>
       </div>
       <div className="playerScore playerBoxConfig">
-        <span>{playerInfo.score}</span>
+        <span>Time: {playerInfo.time}</span>
+        <span>Score: {playerInfo.score}</span>
       </div>
     </div>
   );

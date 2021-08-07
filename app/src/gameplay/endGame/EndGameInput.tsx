@@ -23,6 +23,7 @@ const EndGameInput: React.FC<Props> = ({ userInfoState }) => {
         name: userInfo.name,
         score: userInfo.score,
         date: userInfo.date,
+        time:userInfo.time
       });
       window.location.reload();
     }

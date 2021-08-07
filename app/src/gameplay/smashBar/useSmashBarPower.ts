@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect,useState } from "react";
 import { COMMANDS } from "../cards/reducer/cardsReducer";
 import { Action } from "../cards/reducer/cardsReducerType";
 import { CardsAPI } from "../../service/cards/CardsAPI";
@@ -21,10 +21,11 @@ const useSmashBarPower = ({ selectedCards, dispatch }: Props) => {
   });
 
   useEffect(() => {
-    const maxPowerProcent: number = 10;
+    const maxPowerProcent: number = 100;
+    
     const updateSmashBarProcent = (smashBar: SmashBarType) => {
       const addedSmashProcent: number = smashBar.powerProcent + 10;
-
+      console.log(addedSmashProcent)
       if (addedSmashProcent >= maxPowerProcent) {
         return {
           ...smashBar,
@@ -35,16 +36,12 @@ const useSmashBarPower = ({ selectedCards, dispatch }: Props) => {
         return { ...smashBar, powerProcent: addedSmashProcent };
       }
     };
-
     if (selectedCards.length === 2) {
       if (selectedCards[0].value === selectedCards[1].value) {
-        if (SmashBarPower.powerProcent === maxPowerProcent) {
-        } else {
-          setSmashBarPower((smashBar) => updateSmashBarProcent(smashBar));
-        }
+        setSmashBarPower((smashBar) => updateSmashBarProcent(smashBar));
       }
     }
-  }, [selectedCards, SmashBarPower]);
+  }, [selectedCards]);
 
   useEffect(() => {
     const flipAllCardsDown = () => {

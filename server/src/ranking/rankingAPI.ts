@@ -11,7 +11,8 @@ rankingAPI.post('/', (req, res)=> {
   addPlayerToRanking({
     name:player.name,
     score:player.score,
-    date:player.date
+    date:player.date,
+    time:player.time
   })
 
   res.json(player)

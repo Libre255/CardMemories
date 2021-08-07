@@ -22,9 +22,10 @@
   .playerScore{
     @include createBox(80%, 230px);
     @include flexCenter();
+    flex-direction: column;
     span{
-      font-size: 1.5vw;
-      
+      font-size: 1.1vw;
+      padding: 0.1vw;
     }
   }
 }

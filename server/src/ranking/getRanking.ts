@@ -3,12 +3,13 @@ import {RankingType} from './rankingType';
 
 const getRanking = async ()=>{
   const rankingArray:RankingType[] = []
-  const rankingDB = firebaseDB.collection('ranking').get();
-  
-  (await rankingDB).forEach(doc => rankingArray.push({
+  const rankingDB = await firebaseDB.collection('ranking').get();
+
+  rankingDB.forEach(doc => rankingArray.push({
     name:doc.data().name,
     score:doc.data().score,
-    date:doc.data().date
+    date:doc.data().date,
+    time:doc.data().time
   }))
   return rankingArray
 }
