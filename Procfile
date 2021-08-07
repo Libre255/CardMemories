@@ -1,2 +1,2 @@
-release: cd app && npm run build
+release: cd app && npm i && npm run build
 web: node build/index.js
