@@ -21,8 +21,15 @@ rankingAPI.post('/', (req, res)=> {
 rankingAPI.get('/', (req, res)=>{
   getRanking()
     .then(rankingArray => {
-      const rankingTopToBottom = rankingArray.sort((a,b) => b.score - a.score)
-      res.json(rankingTopToBottom)
+      const rankingTopToBottomByScore = rankingArray.sort((a,b) => {
+        let n = b.score -a.score 
+        if (n !== 0) {
+            return n;
+        }
+        return  b.time -a.time;
+      })
+      const SelectTop5Players = rankingTopToBottomByScore.map((player, index )=> index < 5 ? player : "")
+      res.json(SelectTop5Players)
     });
 });
 
