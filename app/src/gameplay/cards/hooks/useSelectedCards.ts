@@ -11,9 +11,9 @@ const useSelectedCards = ({ dispatch }: Props) => {
   const [selectedCards, setSelectedCards] = useState<CardsAPI[]>([]);
 
   useEffect(() => {
-    const resetSelectedCards = () => {
+    const resetSelectedCards = (resetTimer: number) => {
       const waitForAnimationToFlipDown = () => setSelectedCards([]);
-      setTimeout(waitForAnimationToFlipDown, 1050);
+      setTimeout(waitForAnimationToFlipDown, resetTimer);
     };
     const flipCardsFaceDown = () => {
       dispatch({
@@ -23,9 +23,11 @@ const useSelectedCards = ({ dispatch }: Props) => {
     };
 
     if (selectedCards.length === 2) {
-      resetSelectedCards();
-      if (selectedCards[0].value !== selectedCards[1].value) {
-        setTimeout(flipCardsFaceDown, 1000);
+      if (selectedCards[0].value === selectedCards[1].value) {
+        resetSelectedCards(550);
+      } else if (selectedCards[0].value !== selectedCards[1].value) {
+        resetSelectedCards(1000);
+        setTimeout(flipCardsFaceDown, 950);
       }
     }
   }, [selectedCards, dispatch]);

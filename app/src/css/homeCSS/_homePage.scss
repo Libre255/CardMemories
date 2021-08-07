@@ -1,6 +1,6 @@
 #homePage{
   margin: 10px auto;
-  @include createBox(85vh, $mainBoxWidth);
+  width: $mainBoxWidth;
   //Sub Components
   @import '../gameCSS/gameMainCSS'; 
 }

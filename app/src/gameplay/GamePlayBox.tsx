@@ -31,7 +31,11 @@ const GamePlayBox: React.FC = () => {
         selectCardHook={[selectedCards, setSelectedCards]}
       />
       <SmashBarContainer smashBarState={[SmashBarPower, setSmashBarPower]} />
-      {timerReached0 ? <EndGameInput userInfoState={[userInfo, setUserInfo]} /> : ""}
+      {timerReached0 ? (
+        <EndGameInput userInfoState={[userInfo, setUserInfo]} />
+      ) : (
+        ""
+      )}
     </div>
   );
 };
