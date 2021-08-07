@@ -15,8 +15,8 @@
 
 # misLlaves
 /build/misLLaves
+# /server
 /server/src/misLLaves
-/server
 # misc
 .DS_Store
 .env.local

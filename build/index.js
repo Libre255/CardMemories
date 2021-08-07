@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
     res.json({ msg: "welcom to my card world" });
 });
 app.get('/*', function (req, res) {
-    res.sendFile(path_1.default.join(__dirname + '/app/build/index.html'), function (err) {
+    res.sendFile(path_1.default.join(__dirname + '/../app/build/index.html'), function (err) {
         if (err) {
             res.status(500).send(err);
         }
