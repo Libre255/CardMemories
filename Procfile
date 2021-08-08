@@ -1,2 +1,2 @@
-release: cd app && npm i && npm run build
-web: cd server && npm i && npm run serv
+release: npm run build
+web: npx ts-node server/index.ts
