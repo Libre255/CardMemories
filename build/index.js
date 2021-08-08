@@ -12,20 +12,20 @@ var app = express_1.default();
 var serverPORT = process.env.PORT || 8080;
 app.use(express_1.default.json());
 app.use(cors_1.default());
-app.use('*', express_1.default.static(path_1.default.join(__dirname, '/..', '/..', 'app', 'build')));
+app.use(express_1.default.static(path_1.default.join(__dirname, '/..', '/..', 'app', 'build')));
 app.use('/cards', cardsAPI_1.default);
 app.use('/ranking', rankingAPI_1.default);
 app.get('/', function (req, res) {
     res.json({ msg: "welcom to my card world" });
 });
-app.get('/*', function (req, res) {
+app.all('*', function (req, res) {
     res.sendFile(path_1.default.join(__dirname, '/..', '/..', 'app', 'build', 'index.html'), function (err) {
         if (err) {
             res.status(500).send(err);
         }
     });
 });
-app.listen(process.env.PORT, function () {
+app.listen(serverPORT, function () {
     console.log(path_1.default.join(__dirname, '/..', '/..', 'app', 'build', 'index.html'));
     console.log("***** Card Server has been activated! ******");
 });
