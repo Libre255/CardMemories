@@ -9,9 +9,9 @@ const serverPORT = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use(cors());
+app.use('*', express.static(path.join(__dirname + '/../../app/build')));
 app.use('/cards', cardsAPI);
 app.use('/ranking', rankingAPI);
-app.use('*', express.static(path.join(__dirname + '/../../app/build')));
 
 app.get('/', (req, res) => {
   res.json({msg:"welcom to my card world"})

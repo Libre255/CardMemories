@@ -12,9 +12,9 @@ var app = express_1.default();
 var serverPORT = process.env.PORT || 8080;
 app.use(express_1.default.json());
 app.use(cors_1.default());
+app.use('*', express_1.default.static(path_1.default.join(__dirname + '/../../app/build')));
 app.use('/cards', cardsAPI_1.default);
 app.use('/ranking', rankingAPI_1.default);
-app.use('*', express_1.default.static(path_1.default.join(__dirname + '/../../app/build')));
 app.get('/', function (req, res) {
     res.json({ msg: "welcom to my card world" });
 });
