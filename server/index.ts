@@ -27,7 +27,5 @@ app.get('/*', function (req, res) {
 })
 
 app.listen(serverPORT, ()=>{
-
- console.log("Test Path", path.join(__dirname + '/../../app/build'))
   console.log("***** Card Server has been activated! ******");
 })
