@@ -10,7 +10,8 @@
     "start": "node build/index.js",
     "serv": "nodemon build/index.js",
     "devServ": "nodemon --exec ts-node src/index.ts",
-    "trans":"cd server && npm run build"
+    "trans":"cd server && npm run build",
+    "typeServ":"cd server && npm run devServ"
   },
   "author": "",
   "license": "ISC",
