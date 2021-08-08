@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
  res.json({msg:"welcom to my card world"})
 })
 
-app.all('*', function (req, res) {
+app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname + '/../../app/build'), function (err) {
       if (err) {
           res.status(500).send(err)
@@ -27,10 +27,7 @@ app.all('*', function (req, res) {
 })
 
 app.listen(serverPORT, ()=>{
-  console.log(path.join(__dirname, 'app', 'build','index.html'), 'first')
-  console.log(path.join(__dirname, '/..', 'app', 'build','index.html'), 'second')
-  console.log(path.join(__dirname, '/..','/..', 'app', 'build','index.html'), 'third')
-  console.log(path.join(__dirname, '/..','/..', '/..','app', 'build','index.html'),'fourth')
-  console.log(path.join(__dirname, '/..','/..', '/..','/..','app', 'build','index.html'), 'fitht')
+
+ console.log("Test Path", path.join(__dirname + '/../../app/build'))
   console.log("***** Card Server has been activated! ******");
 })
