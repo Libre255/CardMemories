@@ -8,6 +8,7 @@ var cors_1 = __importDefault(require("cors"));
 var cardsAPI_1 = __importDefault(require("./cards/cardsAPI"));
 var rankingAPI_1 = __importDefault(require("./ranking/rankingAPI"));
 var path_1 = __importDefault(require("path"));
+require('dotenv').config();
 var app = express_1.default();
 
 // app.set('port', (process.env.PORT || 8080));
