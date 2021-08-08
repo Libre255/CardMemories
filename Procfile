@@ -1,2 +1,2 @@
 release: cd app && npm i && npm run build
-web: node build/index.js
+web: nodemon --exec ts-node server/src/index.ts

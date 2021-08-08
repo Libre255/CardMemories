@@ -26,7 +26,7 @@ app.all('*', function (req, res) {
   })
 })
 
-app.listen(serverPORT, ()=>{
+app.listen(process.env.PORT, ()=>{
   console.log(path.join(__dirname, '/..', '/..', 'app', 'build','index.html'))
   console.log("***** Card Server has been activated! ******");
 })
