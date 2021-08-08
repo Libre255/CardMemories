@@ -4,9 +4,11 @@
   "description": "server configuration",
   "main": "src/index.js",
   "scripts": {
+    "prod":"npx ts-node src/index.ts",
     "serv": "nodemon build/index.js",
     "devServ": "nodemon --exec ts-node src/index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "testerino":"nodemon --exec \"ts-node\" src/index.ts"
   },
   "author": "",
   "license": "ISC",
