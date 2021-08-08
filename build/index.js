@@ -9,7 +9,6 @@ var cardsAPI_1 = __importDefault(require("./cards/cardsAPI"));
 var rankingAPI_1 = __importDefault(require("./ranking/rankingAPI"));
 var path_1 = __importDefault(require("path"));
 var app = express_1.default();
-var serverPORT = 8080 || process.env.PORT;
 
 // app.set('port', (process.env.PORT || 8080));
 app.use(express_1.default.json());
@@ -26,6 +25,6 @@ app.get('/*', function (req, res) {
         }
     });
 });
-app.listen(serverPORT, function () {
+app.listen(process.env.PORT, function () {
     console.log("***** Card Server has been activated! ******");
 });
