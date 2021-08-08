@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "main": "server/index.ts",
-  "type": "commonjs",
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
@@ -40,7 +39,7 @@
     "prettier": "prettier --no-config --write \"src/**/*.ts?(x)\" --ignore-path .gitignore",
     "serv": "npx ts-node server/index.ts",
     "devServ": "nodemon --exec ts-node server/index.ts",
-    "buildserv": "tsc server/index.ts"
+    "buildserv": "tsc -w"
   },
   "proxy": "http://localhost:8080",
   "eslintConfig": {
