@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/cards', cardsAPI);
 app.use('/ranking', rankingAPI);
-app.use(express.static(__dirname + '/../../app/build'));
+app.use('*', express.static(path.join(__dirname + '/../../app/build')));
 
 app.get('/', (req, res) => {
   res.json({msg:"welcom to my card world"})
@@ -26,5 +26,6 @@ app.get('/*', function (req, res) {
 })
 
 app.listen(process.env.PORT, ()=>{
+  console.log(path.join(__dirname + '/../../app/build/index.html'))
   console.log("***** Card Server has been activated! ******");
 })
