@@ -1,8 +1,7 @@
-import {firebaseDB} from '../fireBaseFolder/firebaseConfig'
-import {CardsType} from './cardsType'
+const {firebaseDB} = require( '../fireBaseFolder/firebaseConfig');
 
 const getCards = async ()=>{
-  const cardsArray:CardsType[] = []
+  const cardsArray = []
   const cardsDB = await firebaseDB.collection('cardsInfo').get()
   cardsDB.forEach(card => cardsArray.push({
     id:card.data().id,
@@ -13,4 +12,4 @@ const getCards = async ()=>{
   return cardsArray.sort((a,b)=> a.id-b.id)
 }
 
-export {getCards}
+module.exports = {getCards}

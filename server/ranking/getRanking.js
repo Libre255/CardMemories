@@ -1,8 +1,7 @@
-import {firebaseDB} from '../fireBaseFolder/firebaseConfig';
-import {RankingType} from './rankingType';
+const  { firebaseDB } = require("../fireBaseFolder/firebaseConfig");
 
 const getRanking = async ()=>{
-  const rankingArray:RankingType[] = []
+  const rankingArray = []
   const rankingDB = await firebaseDB.collection('ranking').get();
 
   rankingDB.forEach(doc => rankingArray.push({
@@ -14,4 +13,4 @@ const getRanking = async ()=>{
   return rankingArray
 }
 
-export {getRanking}
+module.exports = {getRanking}

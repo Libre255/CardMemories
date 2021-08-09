@@ -1,4 +1,5 @@
 import { CardsAPI } from "../../../service/cards/CardsAPI";
+import { shuffleCardDeck } from "../methods/shuffleCardDeck";
 import { Action, InitialStateType } from "./cardsReducerType";
 
 const updateAmountOfCards = (state: InitialStateType) => ({
@@ -36,7 +37,7 @@ const addCardsToDeck = (state: InitialStateType) => {
   for (let i = 0; i < state.amountOfParCards; i++) {
     deck = [...deck, { ...state.CompleteDBDeck[i] }];
   }
-  const addedNewCards = { ...state, cardDeck: deck };
+  const addedNewCards = { ...state, cardDeck: shuffleCardDeck(deck) };
   return addedNewCards;
 };
 

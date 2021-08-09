@@ -1,12 +1,11 @@
-import express from 'express';
-import { RankingType} from './rankingType'
-import { addPlayerToRanking } from './addPlayerToRanking';
-import {getRanking} from './getRanking';
+const  express = require('express');
+const {addPlayerToRanking} = require('./addPlayerToRanking')
+const {getRanking} = require('./getRanking')
 
 const rankingAPI = express.Router();
 
 rankingAPI.post('/', (req, res)=> {
-  const player:RankingType = req.body
+  const player = req.body
 
   addPlayerToRanking({
     name:player.name,
@@ -33,5 +32,5 @@ rankingAPI.get('/', (req, res)=>{
     });
 });
 
-export default rankingAPI
+module.exports = rankingAPI
 

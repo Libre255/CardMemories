@@ -1,9 +1,7 @@
-import {firebaseDB} from '../fireBaseFolder/firebaseConfig'
-import {CardsType} from './cardsType'
+const  {firebaseDB}= require('../fireBaseFolder/firebaseConfig');
 
-
-const addCards = (amountOfCards:number)=>{
-  const cardsArray:CardsType[] = []
+const addCards = (amountOfCards)=>{
+  const cardsArray = []
   let id = 0;
   
   for (let i = 0; i < amountOfCards; i++){
@@ -22,4 +20,4 @@ const addCards = (amountOfCards:number)=>{
   });
 }
 
-export {addCards}
+module.exports = {addCards}
