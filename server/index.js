@@ -3,7 +3,6 @@ const cors = require('cors');
 const cardsAPI = require( './cards/cardsAPI')
 const rankingAPI = require('./ranking/rankingAPI');
 const path = require('path');
-const serverless = require('serverless-http');
 
 const app = express();
 const serverPORT = process.env.PORT || 8080;
@@ -30,5 +29,3 @@ app.get('/*', function (req, res) {
 app.listen(serverPORT, ()=>{
   console.log("***** Card Server has been activated! ******");
 })
-
-module.exports.handler = serverless(app)
