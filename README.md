@@ -1,4 +1,4 @@
 # CardMemories
 npm i
 
-npm run serv
+start server: cd server && npm i && npm run devServ
